@@ -7,10 +7,12 @@ function Message(props){
   return(
       <div className="cover-rectangle">
         <table>
-          <tr>
-            <td className="cover-text">{props.text}</td>
-            <td className="align-bottom"><img src={IconSend} class="Iconsend" alt="Inactive Submit Button"/></td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className="cover-text">{props.text}</td>
+              <td className="align-bottom"><img src={IconSend} className="Iconsend" alt="Inactive Submit Button"/></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     )
@@ -27,24 +29,24 @@ function App() {
         </div>
       </div>
 
-      <div class="background container">
-        <div class="row mt-5">
-          <div class="col-2 offset-3">
+      <div className="background container">
+        <div className="row mt-5">
+          <div className="col-2 offset-3">
             <Message text={<span>ur&nbsp;so&nbsp;ugly</span>} />
           </div>
-          <div class="col-4 offset-3">
+          <div className="col-4 offset-3">
             <Message text={<span>
                     omg&nbsp;did&nbsp;you&nbsp;see&nbsp;what<br/>
                     they&nbsp;did&nbsp;yesterday?!<br/>
                     what&nbsp;idiots</span>}/>
           </div>
         </div>
-        <div class="row">
-          <div class="col-3 offset-1">
+        <div className="row">
+          <div className="col-3 offset-1">
             <Message text={<span>Cool!&nbsp;See&nbsp;you&nbsp;there!</span>} />
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           <div className="col-12">
             <p>&nbsp;</p>
             <p>&nbsp;</p>
@@ -52,14 +54,14 @@ function App() {
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-3 offset-9">
+        <div className="row">
+          <div className="col-3 offset-9">
             <Message text={<span>No&nbsp;that's&nbsp;so&nbsp;dumb</span>} />
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-3 offset-2">
+        <div className="row">
+          <div className="col-3 offset-2">
             <Message text={<span>The&nbsp;Moana&nbsp;movie&nbsp;is<br />
               great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
               the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
@@ -67,8 +69,8 @@ function App() {
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-3 offset-8">
+        <div className="row">
+          <div className="col-3 offset-8">
             <Message text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
               that&nbsp;will&nbsp;be&nbsp;okay</span>} />
           </div>
@@ -78,7 +80,7 @@ function App() {
 
       <footer className="cover-footer mt-auto">
         <span>Learn about Kindly</span><br/>
-        <img src={IconArrowDown} class="icon-arrow-down" alt="Downward Arrow"/>
+        <img src={IconArrowDown} className="icon-arrow-down" alt="Downward Arrow"/>
       </footer>
     </div>
   );
