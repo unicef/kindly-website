@@ -9,7 +9,7 @@ function Message(props){
         <table>
           <tr>
             <td className="cover-text">{props.text}</td>
-            <td className="align-bottom"><img src={IconSend} class="Iconsend" /></td>
+            <td className="align-bottom"><img src={IconSend} class="Iconsend" alt="Inactive Submit Button"/></td>
           </tr>
         </table>
       </div>
