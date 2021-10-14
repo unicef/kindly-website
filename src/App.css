@@ -1,3 +1,71 @@
+.cover-container {
+  background-color: #1955d5;
+  color: #fff;
+  font-family: Jost;
+  z-index: 0;
+}
+
+.cover-cover {
+  z-index: 100;
+}
+
+.cover-title {
+  font-size: 57px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+}
+
+.cover-footer {
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.42;
+  letter-spacing: normal;
+}
+
+.cover-rectangle {
+  font-size: 17px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.24;
+  letter-spacing: normal;
+  color: #00aeef;
+  padding: 8.5px 10px 9.5px 17px;
+  border-radius: 31.5px;
+  border: solid 1px #00aeef;
+  max-width: fit-content;
+  text-align: left;
+  display: table;
+}
+
+.cover-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+img.Iconsend {
+  width: 27px;
+  height: 27px;
+  margin: 0 0 0 10px;
+  object-fit: contain;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +103,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: local('Jost'), url(./fonts/Jost-VariableFont_wght.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
 }
