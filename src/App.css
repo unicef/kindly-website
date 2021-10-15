@@ -1,5 +1,4 @@
 .cover-container {
-  background-color: #1955d5;
   color: #fff;
   font-family: Jost;
   z-index: 0;
@@ -25,6 +24,7 @@
   font-style: normal;
   line-height: 1.42;
   letter-spacing: normal;
+  z-index: 100;
 }
 
 .cover-rectangle {
@@ -48,6 +48,14 @@
   vertical-align: middle;
 }
 
+.text-blue {
+  color: #1955d5;
+}
+
+.background-blue {
+  background-color: #1955d5;
+}
+
 img.Iconsend {
   width: 27px;
   height: 27px;
@@ -62,9 +70,26 @@ img.Iconsend {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -100;
+    z-index: 50;
 }
 
+.cover-unicef {
+  background-color: #00aeef;
+  font-family: Jost;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+  color: white;
+}
+
+h1 {
+  font-family: Jost;
+  line-height: 1.21;
+
+}
 
 .App {
   text-align: center;
