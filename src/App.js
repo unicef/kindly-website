@@ -29,7 +29,7 @@ function App() {
         </div>
       </div>
 
-      <div className="background container">
+      <div className="background container-fluid">
         <div className="row mt-5">
           <div className="col-2 offset-3">
             <Message text={<span>ur&nbsp;so&nbsp;ugly</span>} />
