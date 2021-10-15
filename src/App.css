@@ -52,6 +52,14 @@
   color: #1955d5;
 }
 
+.text-grey {
+  color: #c6c6cc;
+}
+
+.background-black {
+  background-color: #282828;
+}
+
 .background-blue {
   background-color: #1955d5;
 }
@@ -85,10 +93,17 @@ img.Iconsend {
   color: white;
 }
 
-h1 {
+h1, h2, p {
   font-family: Jost;
-  line-height: 1.21;
+}
 
+.btn {
+  border-radius: 17.5px;
+}
+
+.unicef-blue-section-header {
+  color: #00aeef;
+  font-weight: 600;
 }
 
 .App {
