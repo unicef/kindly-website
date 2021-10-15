@@ -90,23 +90,23 @@ function App() {
         </div>
       </div>
 
-      <div class="px-4 p-5 border-bottom cover-unicef" id="about">
-        <div class="row align-items-center g-5 py-5">
-          <div class="col-lg-5 offset-1">
-            <img src={UNICEFLogo} width="490" alt="UNICEF Logo" class="d-block mx-lg-auto img-fluid" loading="lazy"/>
+      <div className="px-4 p-5 border-bottom cover-unicef" id="about">
+        <div className="row align-items-center g-5 py-5">
+          <div className="col-lg-5 offset-1">
+            <img src={UNICEFLogo} width="490" alt="UNICEF Logo" className="d-block mx-lg-auto img-fluid" loading="lazy"/>
           </div>
-          <div class="col-lg-3 offset-2">
-            <p class="lead text-left">Kindly is the product of a collaboration between UNICEF and Gitanjali Rao, a young innovator.</p>
+          <div className="col-lg-3 offset-2">
+            <p className="lead text-left">Kindly is the product of a collaboration between UNICEF and Gitanjali Rao, a young innovator.</p>
           </div>
         </div>
       </div>
 
-      <div class="px-4 p-5 border-bottom">
-        <div class="row align-items-center g-5 py-5">
-          <div class="col-lg-5 offset-1">
-            <h1 class="">Kindly is an API that uses Machine Learning to identify 'toxic' messages.</h1>  
-            <p class="lead">Kindly evaluates messages before they are sent and offers users the chance to modify them.</p>
-            <p class="lead">Kindly aims to make children feel safer by leveraging the latest advances in technology and by empowering children to solve this pressing challenge.</p>
+      <div className="px-4 p-5 border-bottom">
+        <div className="row align-items-center g-5 py-5">
+          <div className="col-lg-5 offset-1">
+            <h1 className="">Kindly is an API that uses Machine Learning to identify 'toxic' messages.</h1>  
+            <p className="lead">Kindly evaluates messages before they are sent and offers users the chance to modify them.</p>
+            <p className="lead">Kindly aims to make children feel safer by leveraging the latest advances in technology and by empowering children to solve this pressing challenge.</p>
           </div>
         </div>
         <footer className="cover-footer mt-auto mx-auto text-center">
@@ -117,11 +117,11 @@ function App() {
         </footer>
       </div>
 
-      <div class="px-4 p-5 border-bottom background-blue text-white" id="test-kindly">
-        <div class="row align-items-center g-5 py-5">
-          <div class="col-lg-5 offset-1">
-            <h1 class="mb-5">Kindly aims to end cyberbullying, one message at a time.</h1>  
-            <p class="lead"><b>Test Kindly for yourself!</b></p>
+      <div className="px-4 p-5 border-bottom background-blue text-white" id="test-kindly">
+        <div className="row align-items-center g-5 py-5">
+          <div className="col-lg-5 offset-1">
+            <h1 className="mb-5">Kindly aims to end cyberbullying, one message at a time.</h1>  
+            <p className="lead"><b>Test Kindly for yourself!</b></p>
             <p >Reply to the message and check your entry with Kindly to see if your message is toxic or considered cyberbullying.</p>
           </div>
         </div>
