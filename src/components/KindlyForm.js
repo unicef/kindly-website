@@ -5,13 +5,13 @@ import { Button, Card, Form } from 'react-bootstrap';
 import IconMsgGood from '../img/icon-msg-good.svg';
 import IconMsgBad from '../img/icon-msg-bad.svg';
 
-//const KINDLY_URL = "https://kindly-api.azurewebsites.net/detect"
-const KINDLY_URL = "http://localhost:8080/detect"
+const KINDLY_URL = process.env.KINDLY_URL
+					? process.env.KINDLY_URL
+					: "http://localhost:8080/detect"
 
 function KindlyForm() {
 
 	const [inputText, setInputText] = useState();
-
 
 	const waitStatus = (
 		<table style={{height: '80px'}} className="w-100">
@@ -99,8 +99,6 @@ function KindlyForm() {
 		  	console.error('Error:', error);
 		});
 	}
-
-
 
 	return (
 		<div>
