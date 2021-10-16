@@ -1,5 +1,4 @@
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
