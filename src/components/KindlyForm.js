@@ -5,8 +5,8 @@ import { Button, Card, Form } from 'react-bootstrap';
 import IconMsgGood from '../img/icon-msg-good.svg';
 import IconMsgBad from '../img/icon-msg-bad.svg';
 
-const KINDLY_URL = process.env.KINDLY_URL
-					? process.env.KINDLY_URL
+const KINDLY_URL = process.env.REACT_APP_KINDLY_URL
+					? process.env.REACT_APP_KINDLY_URL
 					: "http://localhost:8080/detect"
 
 function KindlyForm() {
