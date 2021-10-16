@@ -27,7 +27,9 @@ jobs:
     
     - name: Build project
       run: yarn run build
-    
+      env:
+        KINDLY_URL: ${{ secrets.KINDLY_URL }}
+
     - name: Run tests
       run: yarn run test
 

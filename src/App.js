@@ -2,6 +2,7 @@ import {HashLink as Link} from "react-router-hash-link";
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import KindlyForm from './components/KindlyForm'
 import IconArrowDownWhite from './img/icon-arrow-down-white.svg';
 import IconArrowDownBlue from './img/icon-arrow-down-blue.svg';
 import IconSend from './img/icon-send.svg';
@@ -119,14 +120,17 @@ function App() {
       </div>
 
       <div className="px-4 p-5 background-blue text-white" id="test-kindly">
-        <div className="row align-items-center g-5 py-5">
+        <div className="row align-items-center g-5 py-5 mb-5">
           <div className="col-lg-5 offset-1">
             <h1 className="mb-5">Kindly aims to end cyberbullying, one message at a time.</h1>  
             <p className="lead"><b>Test Kindly for yourself!</b></p>
             <p >Reply to the message and check your entry with Kindly to see if your message is toxic or considered cyberbullying.</p>
           </div>
+          <div className="col-lg-5 offset-1">
+            <KindlyForm />
+          </div>
         </div>
-        <footer className="cover-footer mt-auto mx-auto text-center">
+        <footer className="cover-footer mt-5 mx-auto text-center">
           <span>How Kindly works</span><br/>
           <img src={IconArrowDownWhite} className="icon-arrow-down" alt="Downward Arrow"/>
         </footer>
