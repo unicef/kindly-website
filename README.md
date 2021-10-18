@@ -1,6 +1,34 @@
-# kindly-website
+# Kindly Website
 
-Public Website for Kindly
+Public website for Kindly hosted at https://kindly.unicef.io. For the main Kindly software code repository, refer to [unicef/kindly](https://github.com/unicef/kindly).
+
+## Overview
+
+Single Page Application built with React following [this website design](https://miro.com/app/board/o9J_ls1DFJA=/?moveToWidget=3074457365573652264&cot=14) ([design in Zeplin](https://app.zeplin.io/project/616824940d0dd1be16eb4b9b), requires login) by Kristina Tlusty and Prateek Upreti 🙏
+
+Summary of main files:
+
+* [src/index.js](src/index.js) provides the entrypoint to the application, which mostly includes `App.css`
+* [src/App.js](src/App.js) uses [React Router](https://reactrouter.com/) to serve two pages:
+	* [src/Main.js] the website homepage that provides all the content, and layout using Bootstrap.
+	* [src/Form.js] provides an embeddable component to try out Kindly, coded in [components/KindlyForm.js](components/KindlyForm.js)
+* [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
+* [src/img] folder contains all the illustrations for the website in SVG format.
+
+## Hosting
+
+The website is hosted using [GitHub Pages](https://pages.github.com/) using the `gh-pages` branch. The process of updating the website is automated through [GitHub Actions](https://docs.github.com/en/actions) through [.github/workflows/build-deploy.yml](.github/workflows/build-deploy.yml) following the documentation provided in the following article: [Deploying a React App Using GitHub Pages and GitHub Actions](https://codeburst.io/deploying-a-react-app-using-github-pages-and-github-actions-7fc14d380796)
+
+## Embed Form
+
+The Kindly Form is embeddable for demo purposes into other websites, such as unicef.org, using the following HTML code:
+
+```html
+<iframe src="http://kindly.unicef.io/form" style="width: 400px; height: 600px; border: none;"></iframe>
+
+```
+
+_⚠️&nbsp;&nbsp;Note that this form leverages an API endpoint that has the origin restricted to a shortlist of allowed domains, and it will otherwise not work from any generic website._
 
 ## Development
 
