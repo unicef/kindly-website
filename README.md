@@ -70,3 +70,14 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## 💙 About UNICEF
+
+[UNICEF](https://www.unicef.org/) works in over 190 countries and territories to protect the rights of every child. UNICEF has spent more than 70 years working to improve the lives of children and their families. In UNICEF, **we believe all children have a right to survive, thrive and fulfill their potential – to the benefit of a better world**.
+
+## :memo: License
+
+This repository contains both software and content, and a different license applies to each.
+
+* Software included in this repository is licensed under the [MIT License](LICENSE). Please note that this license only applies to the software used to create Kindly public website, and a different software license applies to the software that Kindly runs. Refer to [unicef/kindly](https://github.com/unicef/kindly] for additional information.
+* Content included in this repository is licenses under the [Creative Commons Attribution-ShareAlike 4.0](LICENSE.content.md)
