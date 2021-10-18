@@ -189,3 +189,7 @@ h1, h2, p {
   border-radius: 30px;
   background-color: #def5ff;
 }
+
+.card-header {
+  background-color: rgba(0,0,0,0);
+}

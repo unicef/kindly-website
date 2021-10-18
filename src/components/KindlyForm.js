@@ -157,7 +157,7 @@ function KindlyForm() {
 			    </div>
 			  </Card.Body>
 			</Card>
-			<div id="kindly-status">{waitStatus}</div>
+			<div id="kindly-status" className="text-white">{waitStatus}</div>
 		</div>
 	)
 }
