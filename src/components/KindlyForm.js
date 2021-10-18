@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Button, Card, Form } from 'react-bootstrap';
+import { Button, Card, Form, Spinner } from 'react-bootstrap';
 import IconMsgGood from '../img/icon-msg-good.svg';
 import IconMsgBad from '../img/icon-msg-bad.svg';
 
@@ -17,7 +17,10 @@ function KindlyForm() {
 		<table style={{height: '80px'}} className="w-100">
   			<tbody>
     			<tr>
-    				<td className="align-middle text-center">Results loading … hang tight!</td>
+    				<td className="align-middle text-center">
+    					<Spinner animation="border" variant="light" size="sm" />&nbsp;&nbsp;
+						Results loading … hang tight!
+					</td>
     			</tr>
     		</tbody>
     	</table>
