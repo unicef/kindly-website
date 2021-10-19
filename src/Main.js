@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link";
-import { Button } from 'react-bootstrap';
+import { Accordion, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import KindlyForm from './components/KindlyForm'
@@ -268,7 +268,72 @@ function Main() {
       <div className="container-lg p-5">
         <div className="row align-items-center g-5 py-5">
           <div className="col-lg-7 mx-auto">
-          <h2>Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions</h2>
+            <Accordion className="pb-3 pt-4">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>How does Kindly integrate into existing platforms?</Accordion.Header>
+                <Accordion.Body>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                  est laborum.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+
+            <Accordion className="pb-3">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Who is Kindly made for?</Accordion.Header>
+                <Accordion.Body>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                  est laborum.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+
+            <Accordion className="pb-3">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>What are Kindly’s child protection and safety policies?</Accordion.Header>
+                <Accordion.Body>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                  est laborum.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+
+            <Accordion className="pb-3">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>How can I get involved with Kindly?</Accordion.Header>
+                <Accordion.Body>
+                  We’d love to have you! To keep up with Kindly’s progress and latest
+                  developments, access the <a 
+                    href="https://github.com/unicef/kindly" 
+                    target="_blank" 
+                    rel="noreferrer">
+                    API repository
+                  </a>. You can also contact Kindly’s team via email at <a 
+                    href="mailto:kindly@unicef.org"
+                    target="_blank" 
+                    rel="noreferrer">
+                    kindly@unicef.org
+                  </a>.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+
 
           </div>
         </div>

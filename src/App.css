@@ -193,3 +193,40 @@ h1, h2, p {
 .card-header {
   background-color: rgba(0,0,0,0);
 }
+
+.accordion-item {
+  border: 0;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 20px 20px 0 0;
+  background-color: #1955d5;
+  color: white;
+}
+
+.accordion-item:first-of-type .accordion-button.collapsed {
+  color: #1955d5;
+  background-color: #def5ff;
+  border-radius: 20px;
+}
+
+.accordion-body {
+  background-color: #1955d5;
+  color: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.accordion-body a {
+  color: #00aeef;
+}
+
+.accordion-button:not(.collapsed), .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2228%22%20height%3D%2227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M.5%200h27v27H.5z%22/%3E%0A%20%20%20%20%20%20%20%20%3Cg%20stroke%3D%22%231955D5%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M14%207.08v12.84M20.42%2013.5H7.58%22/%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E);
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2228%22%20height%3D%2227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M.5%200h27v27H.5z%22/%3E%0A%20%20%20%20%20%20%20%20%3Cg%20stroke%3D%22%23FFF%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M14%207.08v12.84M20.42%2013.5H7.58%22/%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E);
+}
