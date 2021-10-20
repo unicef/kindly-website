@@ -281,7 +281,7 @@ function Main() {
         </div>
       </div>
 
-      <div className="p-5">
+      <div className="py-4">
         <div className="container-lg p-5">
           <div className="row align-items-center g-5 py-5 flex-row-reverse">
             <div className="col-lg-5">
@@ -305,10 +305,10 @@ function Main() {
         </div>
       </div>
 
-      <div className="p-5 background-blue text-white" id="test-kindly">
+      <div className="py-4 background-blue text-white" id="test-kindly">
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5 mb-5">
-            <div className="col-lg-5 offset-lg-1 text-lg-start text-center">
+            <div className="col-lg-5 offset-lg-1 text-lg-start text-center px-5">
               <h1 className="mb-5">Kindly aims to end cyberbullying, one message at a time.</h1>  
               <p className="lead">Test Kindly for yourself!</p>
               <p >Reply to the message and check your entry with Kindly to see if your message is toxic or considered cyberbullying.</p>
@@ -334,7 +334,7 @@ function Main() {
               <p className="text-grey">When integrated with existing text-based platforms, Kindly allows users choose to check and edit their messages for toxic intent.</p>
             </div>
           </div>
-          <div className="row px-5 pb-5 align-items-start">
+          <div className="row px-lg-5 pb-5 align-items-start">
             <div className="col-lg-3 text-center mx-auto px-5 mt-4 mt-md-0">
               <img 
                 src={checkMessage}
