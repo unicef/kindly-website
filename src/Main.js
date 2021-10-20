@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { HashLink } from "react-router-hash-link";
 import { Accordion, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,22 +31,91 @@ function Message(props){
     )
 }
 
+const OriginalColors = {
+  background: 'background-blue',
+  title: 'text-white',
+  margin: 'whiteMargin',
+  text: 'text-blue',
+  arrowDown: IconArrowDownWhite
+}
+
+const KindlyColors = {
+  background: 'background-light-blue',
+  title: 'text-blue',
+  margin: 'blueMargin',
+  text: 'text-white',
+  arrowDown: IconArrowDownBlue
+}
 
 function Main() {
+
+  const [radioState, setRadioState] = useState(1)
+  const [colors, setColors] = useState(OriginalColors)
+  const [cssProperties, setCssProperties] = useState({})
+
+  function handleRadioButton(value) {
+    setRadioState(value)
+    if(value){
+      setColors(OriginalColors)
+      setCssProperties({
+            '--original-bg-color': '#fff',
+            '--original-color': '#1955d5'
+         })
+    } else {
+      setColors(KindlyColors)
+            setCssProperties({
+            '--original-bg-color': '#1955d5',
+            '--original-color': '#fff'
+         })
+    }
+  }
+
   return (
     <main>
-      <div className="cover-container d-flex w-100 vh-100 p-3 mx-auto flex-column text-center background-blue">
+      <div className={'cover-container d-flex w-100 vh-100 p-3 mx-auto flex-column text-center '+colors['background']}>
         <div className="cover-cover text-center mt-auto">
-          <div className="cover-title">
+          <div className={'cover-title '+colors['title']}>
             See how messages can<br />
             be rethought, Kindly
+          </div>
+          <div className={'buttonWrapper mt-3 mx-auto '+colors['margin']}>
+            <input 
+              type="radio"
+              className="btn-check"
+              name="options-outlined"
+              id="success-outlined"
+              autocomplete="off"
+              checked={radioState}
+              onChange={() => handleRadioButton(1)}
+            />
+            <label 
+              className={'btn btn-outline-light btn-original'}
+              for="success-outlined"
+              style={cssProperties}>
+                ORIGINAL MESSAGE
+            </label>
+            &nbsp;&nbsp;&nbsp;
+            <input
+              type="radio"
+              className="btn-check btn-kindly"
+              name="options-outlined"
+              id="danger-outlined"
+              autocomplete="off"
+              checked={!radioState}
+              onChange={() => handleRadioButton(0)}
+            />
+            <label 
+              className={'btn btn-outline-light btn-kindly'}
+              for="danger-outlined">
+                APPLY KINDLY
+            </label>
           </div>
         </div>
 
         <footer className="cover-footer mt-auto">
-          <HashLink to="#about" className="text-decoration-none text-white">
+          <HashLink to="#about" className={'text-decoration-none '+colors['title']}>
             <span>Learn about Kindly</span><br/>
-            <img src={IconArrowDownWhite} className="icon-arrow-down" alt="Downward Arrow"/>
+            <img src={radioState ? IconArrowDownWhite : IconArrowDownBlue} className="icon-arrow-down" alt="Downward Arrow"/>
           </HashLink>
         </footer>
 

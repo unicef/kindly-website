@@ -1,3 +1,4 @@
+
 .cover-container {
   color: #fff;
   font-family: Jost;
@@ -64,6 +65,10 @@
   background-color: #1955d5;
 }
 
+.background-light-blue {
+  background-color: #def5ff;
+}
+
 img.Iconsend {
   width: 27px;
   height: 27px;
@@ -120,6 +125,64 @@ h1, h2, p {
   background-color: #282828;
   font-weight: 600;
   text-align: center;
+}
+
+.buttonWrapper {
+  display: block;
+  border-radius: 23.5px;
+  max-width: fit-content;
+  padding: .5em;
+  --original-bg-color: #fff;
+  --original-color: #1955d5;
+  --kindly-bg-color: #1955d5;
+  --kindly-color: #fff;
+}
+
+.buttonWrapper.whiteMargin {
+  border: solid 1px #fff;
+}
+
+.buttonWrapper.blueMargin {
+  border: solid 1px #1955d5;
+}
+
+.buttonWrapper .btn-check+.btn-outline-light{
+  border: 0;
+  box-shadow: none;
+}
+
+/*.buttonWrapper .btn-check:checked+.btn-outline-light,
+.buttonWrapper .btn-check:hover+.btn-outline-light{
+  color: var(--btn-color);
+}*/
+
+.buttonWrapper .btn-check+.btn-original {
+  color: #1955d5;
+}
+
+.buttonWrapper .btn-check+.btn-kindly {
+  color: #fff;
+}
+
+.buttonWrapper .btn-check:checked+.btn-kindly {
+  background-color: #1955d5;
+  color: #fff;
+}
+
+.buttonWrapper .btn-check:hover+.btn-original {
+  background-color: var(--original-bg-color);
+  color: var(--original-color);
+}
+
+.buttonWrapper .btn-check:hover+.btn-kindly {
+  background-color: var(--kindly-bg-color);
+  color: var(--kindly-color);
+}
+
+.buttonWrapper label {
+  font-weight: 600;
+  font-size: 0.8em;
+  padding: 0.6em 2em 0.6em 2em;
 }
 
 .App {
