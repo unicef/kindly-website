@@ -412,13 +412,14 @@ function Main() {
               <Accordion.Item eventKey="0">
                 <Accordion.Header>How does Kindly integrate into existing platforms?</Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum.
+                  Kindly offers a public API that any online service provider can leverage
+                  to integrate with their existing product offering. It is as simple as
+                  sending any message that the user is typing to that API endpoint, and
+                  process the response to provide feedback to the user on whether that
+                  user-generated content is fine to post, or the user should reconsider
+                  their language before posting. Contact <a
+                  href="mailto:kindly@unicef.org" rel="noreferrer">kindly@unicef.org</a> with
+                  any technical questions around the integration possibilities.
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -427,13 +428,12 @@ function Main() {
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Who is Kindly made for?</Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum.
+                  Kindly was created for children between the ages of 10 and 18 years in an
+                  effort to end cyberbullying and make them feel safer. Kindly can be
+                  integrated with any platform that provides text-based services (such as
+                  chat interface, email platform) to benefit children of all ages, globally.
+                  While the current version is available in English, more languages are
+                  envisioned in the future.
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -442,13 +442,21 @@ function Main() {
               <Accordion.Item eventKey="0">
                 <Accordion.Header>What are Kindly’s child protection and safety policies?</Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum.
+                  Kindly’s open-source API does not collect any user data. It is supported
+                  by UNICEF's strong <a
+                    href="https://www.unicef.org/supply/documents/policy-conduct-promoting-protection-and-safeguarding-children"
+                    target="_blank"
+                    rel="noreferrer">Child Safeguarding</a> standards that promote the
+                  protection and safeguarding of all children. It is also supported by
+                  UNICEF’s <a
+                    href="https://www.unicef.org/supply/documents/unicef-policy-personal-data-protection"
+                    target="_blank"
+                    rel="noreferrer">Data Protection</a> standards that ensure that
+                  individuals' privacy rights are honored and their data appropriately
+                  protected. However, if someone wishes to contribute to the training
+                  data set, they can do so through our <i>Contribute Page</i>. Before
+                  being added to the training open data set, the data will be anonymized
+                  and reviewed by trusted UNICEF staff to maintain appropriate privacy measures.
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
