@@ -7,7 +7,7 @@ For the main Kindly software code repository, refer to [unicef/kindly](https://g
 
 Single Page Application built with React following [this website design](https://miro.com/app/board/o9J_ls1DFJA=/?moveToWidget=3074457365573652264&cot=14) ([design in Zeplin](https://app.zeplin.io/project/616824940d0dd1be16eb4b9b), requires login).
 
-Original website design by Kristina Tlusty and Prateek Upreti 🙏
+Original website design by [Kristina Tlusty](https://www.linkedin.com/in/kristina-tlusty/) and Prateek Upreti 🙏
 
 Summary of main files:
 
