@@ -124,7 +124,7 @@ function KindlyForm() {
 	return (
 		<div>
 			<Card>
-			  <Card.Header className="text-blue">
+			  <Card.Header className="text-blue p-4">
 			  	<table className="w-100">
 		    		<tbody>
 		    			<tr>
@@ -144,7 +144,7 @@ function KindlyForm() {
 		    		</tbody>
 		    	</table>
 			  </Card.Header>
-			  <Card.Body>
+			  <Card.Body className="p-4">
 			  	{prompts && prompts.map((element, index) =>
 			  		<div className="chat-bubble w-75" key={index}>
 			    		{element}
