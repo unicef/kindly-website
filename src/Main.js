@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HashLink } from "react-router-hash-link";
-import { Accordion, Button } from 'react-bootstrap';
+import { Accordion, Button, Collapse, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import KindlyForm from './components/KindlyForm'
@@ -16,18 +16,70 @@ import privacy from './img/kindly-privacy.svg';
 import openSource from './img/kindly-open-source.svg';
 import empower from './img/kindly-empowerment.svg';
 
+import IconMsgGood from './img/icon-msg-good.svg';
+import IconMsgBad from './img/icon-msg-bad.svg';
+
 function Message(props){
+
+  let roundCorners = ''
+  let borderColor = ''
+  if(!props.feedback){
+    roundCorners = 'roundBottomCorners'
+  } else {
+    if(props.toxic) {
+      borderColor = 'cornerOrange'
+    } else {
+      borderColor = 'cornerGreen'
+    }
+  }
+
   return(
-      <div className="cover-rectangle">
-        <table>
-          <tbody>
-            <tr>
-              <td className="cover-text">{props.text}</td>
-              <td className="align-bottom"><img src={IconSend} className="Iconsend" alt="Inactive Submit Button"/></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <Card className={'cover-rectangle ' + roundCorners + ' ' + borderColor}>
+        <Card.Header>
+          <table>
+            <tbody>
+              <tr>
+                <td className="cover-text">{props.text}</td>
+                <td className="align-bottom"><img src={IconSend} className="Iconsend" alt="Inactive Submit Button"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </Card.Header>
+        <Collapse in={props.feedback}>
+          {props.toxic ?
+          <Card.Body className="msgBad">
+            <table>
+              <tbody>
+                <tr>
+                  <td className="pr-2">
+                    <img src={IconMsgBad} alt="Bad Message" width="50" style={{marginRight: '.6em'}}/>
+                  </td>
+                  <td className="text-start align-top">
+                    Hmm … maybe reconsider this message?
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </Card.Body>
+          :
+          <Card.Body className="msgGood">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src={IconMsgGood} alt="Good Message" width="50" style={{marginRight: '.6em'}}/>
+                  </td>
+                  <td className="text-start align-top">
+                    Your message looks great! Good to send!
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </Card.Body>
+          }
+        </Collapse>
+      </Card>
+
     )
 }
 
@@ -58,15 +110,15 @@ function Main() {
     if(value){
       setColors(OriginalColors)
       setCssProperties({
-            '--original-bg-color': '#fff',
-            '--original-color': '#1955d5'
-         })
+        '--original-bg-color': '#fff',
+        '--original-color': '#1955d5'
+      })
     } else {
       setColors(KindlyColors)
-            setCssProperties({
-            '--original-bg-color': '#1955d5',
-            '--original-color': '#fff'
-         })
+      setCssProperties({
+        '--original-bg-color': '#1955d5',
+        '--original-color': '#fff'
+      })
     }
   }
 
@@ -122,18 +174,26 @@ function Main() {
         <div className="background container-fluid vh-100">
           <div className="row mt-5">
             <div className="col-2 offset-3">
-              <Message text={<span>ur&nbsp;so&nbsp;ugly</span>} />
+              <Message 
+                text={<span>ur&nbsp;so&nbsp;ugly</span>}
+                feedback={!radioState}
+                toxic={true} />
             </div>
             <div className="col-4 offset-3">
-              <Message text={<span>
-                      omg&nbsp;did&nbsp;you&nbsp;see&nbsp;what<br/>
+              <Message 
+                text={<span>omg&nbsp;did&nbsp;you&nbsp;see&nbsp;what<br/>
                       they&nbsp;did&nbsp;yesterday?!<br/>
-                      what&nbsp;idiots</span>}/>
+                      what&nbsp;idiots</span>}
+                feedback={!radioState}
+                toxic={true} />
             </div>
           </div>
           <div className="row">
             <div className="col-3 offset-1">
-              <Message text={<span>Cool!&nbsp;See&nbsp;you&nbsp;there!</span>} />
+              <Message 
+                text={<span>Cool!&nbsp;See&nbsp;you&nbsp;there!</span>} 
+                feedback={!radioState}
+                toxic={false} />
             </div>
           </div>
           <div className="row">
@@ -146,23 +206,32 @@ function Main() {
 
           <div className="row">
             <div className="col-3 offset-9">
-              <Message text={<span>No&nbsp;that's&nbsp;so&nbsp;dumb</span>} />
+              <Message 
+                text={<span>No&nbsp;that's&nbsp;so&nbsp;dumb</span>}
+                feedback={!radioState}
+                toxic={true} />
             </div>
           </div>
 
           <div className="row">
             <div className="col-3 offset-2">
-              <Message text={<span>The&nbsp;Moana&nbsp;movie&nbsp;is<br />
-                great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
-                the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
-                just&nbsp;freak&nbsp;me&nbsp;out</span>} />
+              <Message 
+                text={<span>The&nbsp;Moana&nbsp;movie&nbsp;is<br />
+                  great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
+                  the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
+                  just&nbsp;freak&nbsp;me&nbsp;out</span>} 
+                feedback={!radioState}
+                toxic={false} />
             </div>
           </div>
 
           <div className="row">
             <div className="col-3 offset-8">
-              <Message text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
-                that&nbsp;will&nbsp;be&nbsp;okay</span>} />
+              <Message 
+                text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
+                  that&nbsp;will&nbsp;be&nbsp;okay</span>} 
+                feedback={!radioState}
+                toxic={false} />
             </div>
           </div>
 

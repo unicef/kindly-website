@@ -36,12 +36,23 @@
   line-height: 1.24;
   letter-spacing: normal;
   color: #00aeef;
-  padding: 8.5px 10px 9.5px 17px;
-  border-radius: 31.5px;
+  border-radius: 30px 30px 0 0;
   border: solid 1px #00aeef;
   max-width: fit-content;
   text-align: left;
   display: table;
+}
+
+.roundBottomCorners {
+  border-radius: 30px 30px 30px 30px;
+}
+
+.cornerOrange {
+  border: solid 1px #ff9f40; 
+}
+
+.cornerGreen {
+  border: solid 1px #46c66d;
 }
 
 .cover-text {
@@ -185,6 +196,19 @@ h1, h2, p {
   padding: 0.6em 2em 0.6em 2em;
 }
 
+.msgGood {
+  background-color: #46c66d;
+  color: white;
+  border-radius: 0 0 30px 30px;
+}
+
+.msgBad {
+  background-color: #ff9f40;
+  color: white;
+  border-radius: 0 0 30px 30px;
+
+}
+
 .App {
   text-align: center;
 }
@@ -253,8 +277,17 @@ h1, h2, p {
   background-color: #def5ff;
 }
 
+.cover-rectangle.card {
+  background-color: transparent;
+}
+
 .card-header {
   background-color: rgba(0,0,0,0);
+  border-bottom: solid 1px #1955d5;
+}
+
+.cover-rectangle .card-header {
+  border-bottom: 0;
 }
 
 .accordion-item {
