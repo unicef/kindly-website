@@ -520,7 +520,7 @@ function Main() {
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-5 mx-auto">
               <h1>Kindly</h1>
-              <p>Kindly is he product of innovator Gitanjali Rao and UNICEF's collaboration</p>
+              <p>Kindly is the product of innovator Gitanjali Rao and UNICEF's collaboration</p>
             </div>
             <div className="col-lg-3 mx-auto text-white">
               <div className="row mb-2">
