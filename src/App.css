@@ -10,12 +10,18 @@
 }
 
 .cover-title {
-  font-size: 57px;
+  font-size: 40px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
   letter-spacing: normal;
+}
+
+@media (min-width: 576px){
+  .cover-title {
+      font-size: 57px;
+  }
 }
 
 .cover-footer {
@@ -334,4 +340,8 @@ h1, h2, p {
 }
 .accordion-button:not(.collapsed)::after {
     background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2228%22%20height%3D%2227%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M.5%200h27v27H.5z%22/%3E%0A%20%20%20%20%20%20%20%20%3Cg%20stroke%3D%22%23FFF%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M14%207.08v12.84M20.42%2013.5H7.58%22/%3E%0A%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%3C/svg%3E);
+}
+
+.lead {
+  font-weight: 600;
 }

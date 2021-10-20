@@ -35,7 +35,7 @@ function Message(props){
 
   return(
       <Card 
-        className={'cover-rectangle ' + roundCorners + ' ' + borderColor}
+        className={'cover-rectangle ' + roundCorners + ' ' + borderColor + ' ' + props.addClasses}
         style={{
           top: props.top,
           left: props.left,
@@ -136,16 +136,6 @@ function Main() {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(
-  //     ref.current.clientHeight,
-  //     ref.current.clientLeft,
-  //     ref.current.clientTop,
-  //     ref.current.clientWidth)
-  //   let node = window.getComputedStyle(ref.current)
-  //   console.log(node.getPropertyValue('margin-top'))
-  // })
-
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
@@ -223,7 +213,7 @@ function Main() {
             feedback={!radioState}
             toxic={true} 
             top={(dimensions['top']/2 - 60)+'px'}
-            left={(dimensions['left']+35)+'px'}
+            left={(dimensions['left']-10)+'px'}
             />
 
           <Message 
@@ -231,9 +221,9 @@ function Main() {
                   they&nbsp;did&nbsp;yesterday?!<br/>
                   what&nbsp;idiots</span>}
             feedback={!radioState}
-            toxic={true} 
-            top={(dimensions['top']/1.7-80)+'px'}
-            left={(dimensions['left']+dimensions['width']-23)+'px'}
+            toxic={true}
+            top={(dimensions['top']*1.2+dimensions['height'])+'px'}
+            left={(dimensions['left'])+'px'}
           />
 
           <Message 
@@ -242,6 +232,7 @@ function Main() {
             toxic={false} 
             top={(dimensions['top']+20)+'px'}
             left={(dimensions['left']/1.8-120)+'px'}
+            addClasses='d-none d-md-block'
           />
 
           <Message 
@@ -250,7 +241,7 @@ function Main() {
             feedback={!radioState}
             toxic={false} 
             top={(dimensions['top']+dimensions['height']+40)+'px'}
-            left={(dimensions['left']+dimensions['width']-150)+'px'}
+            left={(dimensions['left']+dimensions['width']-140)+'px'}
           />
 
           <Message 
@@ -260,6 +251,7 @@ function Main() {
             top={(dimensions['top']+dimensions['height']-60)+'px'}
             left={(dimensions['left']+dimensions['width'])+'px'}
             zindex={10}
+            addClasses='d-none d-md-block'
           />
 
           <Message 
@@ -269,19 +261,9 @@ function Main() {
               just&nbsp;freak&nbsp;me&nbsp;out</span>} 
             feedback={!radioState}
             toxic={false} 
-            top={(dimensions['top']*1.2+dimensions['height']-8)+'px'}
-            left={(dimensions['left']-115)+'px'}
+            top={(dimensions['top']/1.7-80)+'px'}
+            left={(dimensions['left']*1.5+dimensions['width']-200)+'px'}
           />
-
-          <Message 
-            text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
-              that&nbsp;will&nbsp;be&nbsp;okay</span>} 
-            feedback={!radioState}
-            toxic={false} 
-            top={(dimensions['top']+dimensions['height']+40)+'px'}
-            left={(dimensions['left']+dimensions['width']-150)+'px'}
-          />
-
 
         </div>
       </div>
@@ -289,11 +271,11 @@ function Main() {
       <div className="p-5 cover-unicef" id="about">
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-5 offset-1">
-              <img src={UNICEFLogo} width="490" alt="UNICEF Logo" className="d-block mx-lg-auto img-fluid" loading="lazy"/>
+            <div className="col-lg-5 offset-lg-1">
+              <img src={UNICEFLogo} width="490" alt="UNICEF Logo" className="d-block mx-auto img-fluid" loading="lazy"/>
             </div>
-            <div className="col-lg-3 offset-2">
-              <p className="lead text-left">Kindly is the product of a collaboration between UNICEF and Gitanjali Rao, a young innovator.</p>
+            <div className="col-lg-3 offset-lg-2">
+              <p className="lead text-lg-start text-center">Kindly is the product of a collaboration between UNICEF and Gitanjali Rao, a young innovator.</p>
             </div>
           </div>
         </div>
@@ -301,17 +283,17 @@ function Main() {
 
       <div className="p-5">
         <div className="container-lg p-5">
-          <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-5 offset-1">
-              <h1 className="">Kindly is an API that uses Machine Learning to identify 'toxic' messages.</h1>  
-              <p className="lead">Kindly evaluates messages before they are sent and offers users the chance to modify them.</p>
-              <p className="lead">Kindly aims to make children feel safer by leveraging the latest advances in technology and by empowering children to solve this pressing challenge.</p>
-            </div>
+          <div className="row align-items-center g-5 py-5 flex-row-reverse">
             <div className="col-lg-5">
               <img 
                 src={checkWithKindly}
                 alt="Check With Kindly"
                 className="w-100"/> 
+            </div>
+            <div className="col-lg-5 offset-1">
+              <h1>Kindly is an API that uses Machine Learning to identify 'toxic' messages.</h1>  
+              <p style={{fontSize: '1.2em'}}>Kindly evaluates messages before they are sent and offers users the chance to modify them.</p>
+              <p style={{fontSize: '1.2em'}}>Kindly aims to make children feel safer by leveraging the latest advances in technology and by empowering children to solve this pressing challenge.</p>
             </div>
           </div>
           <footer className="cover-footer mt-auto mx-auto text-center">
@@ -326,12 +308,12 @@ function Main() {
       <div className="p-5 background-blue text-white" id="test-kindly">
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5 mb-5">
-            <div className="col-lg-5 offset-1">
+            <div className="col-lg-5 offset-lg-1 text-lg-start text-center">
               <h1 className="mb-5">Kindly aims to end cyberbullying, one message at a time.</h1>  
-              <p className="lead"><b>Test Kindly for yourself!</b></p>
+              <p className="lead">Test Kindly for yourself!</p>
               <p >Reply to the message and check your entry with Kindly to see if your message is toxic or considered cyberbullying.</p>
             </div>
-            <div className="col-lg-5 offset-1">
+            <div className="col-lg-5 offset-lg-1">
               <KindlyForm />
             </div>
           </div>
@@ -353,7 +335,7 @@ function Main() {
             </div>
           </div>
           <div className="row px-5 pb-5 align-items-start">
-            <div className="col-lg-3 text-center mx-auto px-5">
+            <div className="col-lg-3 text-center mx-auto px-5 mt-4 mt-md-0">
               <img 
                 src={checkMessage}
                 alt="Check the message"
@@ -362,7 +344,7 @@ function Main() {
               <p>Users prompt Kindly to evaluate their message draft
               for toxic text or cyberbullying intent</p>
             </div>
-            <div className="col-lg-3 text-center mx-auto">
+            <div className="col-lg-3 text-center mx-auto mt-4 mt-md-0">
               <img
                 src={viewFeedback}
                 alt="View Feedback"/>
@@ -370,7 +352,7 @@ function Main() {
               <p>Feedback on the message offers users the chance
               to edit their original message</p>
             </div>
-            <div className="col-lg-3 text-center mx-auto px-5">
+            <div className="col-lg-3 text-center mx-auto px-5 mt-4 mt-md-0">
               <img
                 src={sendFinalMsg}
                 alt="Send Final Message"
@@ -409,9 +391,10 @@ function Main() {
             <p className="text-grey">Partners Gitanjali Rao and UNICEF provide the principles that make Kindly an excellent digital tool that empowers children.</p>
           </div>
         </div>
-        <div className="row align-items-center px-5">
+
+        <div className="row align-items-center">
           <div className="col-lg-4 text-center mx-auto">
-            <img src={privacy} alt="Children's data privacy" />
+            <img src={privacy} alt="Children's data privacy" className="img-fluid px-5 px-md-0" />
           </div>
           <div className="col-lg-5 mx-auto">
             <p className="unicef-blue-section-header">Protection of childen's rights and data</p>
@@ -424,7 +407,10 @@ function Main() {
           </div>
         </div>
 
-        <div className="row align-items-center px-5">
+        <div className="row align-items-center px-md-5 flex-row-reverse mt-4">
+          <div className="col-lg-4 text-center mx-auto w-80">
+            <img src={openSource} alt="Open-source solution" className="img-fluid px-5 px-md-0" />
+          </div>
           <div className="col-lg-5 mx-auto">
             <p className="unicef-blue-section-header">An open-source solution for anyone to contribute</p>
             <p>By developing Kindly as an open-source solution, UNICEF encourages
@@ -433,16 +419,14 @@ function Main() {
             improvement that allows the tool to meet the specific needs of
             different communities.</p>
           </div>
-          <div className="col-lg-4 text-center mx-auto">
-            <img src={openSource} alt="Open-source solution" />
-          </div>
+          
         </div>
 
-        <div className="row align-items-center px-5">
+        <div className="row align-items-center px-md-5 mt-4" >
           <div className="col-lg-4 text-center mx-auto">
-            <img src={empower} alt="Empower anyone to contribute" />
+            <img src={empower} alt="Empower anyone to contribute" className="img-fluid px-5 px-md-0" />
           </div>
-          <div className="col-lg-5 mx-auto">
+          <div className="col-lg-5 mx-auto mt-3">
             <p className="unicef-blue-section-header">Engaging children directly in a solution to cyberbullying</p>
             <p>While similar services to Kindly exist in the market, they do not
             engage children in the way Kindly aims to. Kindly  gives children
@@ -455,7 +439,7 @@ function Main() {
       <div className="container-lg p-5">
         <div className="row align-items-center g-5 py-5">
           <div className="col-lg-7 mx-auto">
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="text-lg-start text-center">Frequently Asked Questions</h2>
             <Accordion className="pb-3 pt-4">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>How does Kindly integrate into existing platforms?</Accordion.Header>
@@ -538,7 +522,7 @@ function Main() {
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-7 mx-auto text-center">
-              <h2>Join us in ending cyberbullying</h2>
+              <h2 className="px-5">Join us in ending cyberbullying</h2>
             </div>
           </div>
           <div className="row align-items-center g-5 py-5">
@@ -555,7 +539,7 @@ function Main() {
                 Software Repository
               </Button>
             </div>
-            <div className="col-lg-4 mx-auto text-center">
+            <div className="col-lg-4 mx-auto text-center pt-5 pt-lg-0">
               <p className="lead">Learn more</p>
               <p>Connect with Kindly to learn more about Kindly or to explore a partnership role with us</p>
               <Button 
@@ -574,17 +558,17 @@ function Main() {
       <div className="p-5 background-black text-white">
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-5 mx-auto">
+            <div className="col-4 mx-auto">
               <h1>Kindly</h1>
               <p>Kindly is the product of innovator Gitanjali Rao and UNICEF's collaboration</p>
             </div>
-            <div className="col-lg-3 mx-auto text-white">
-              <div className="row mb-2">
+            <div className="col-3 mx-auto text-white">
+              <div className="row mb-4">
                 <HashLink to="#test-kindly" className="text-decoration-none text-white ">
                   Test Kindly
                 </HashLink>
               </div>
-              <div className="row mb-2">
+              <div className="row mb-4">
                 <a
                   href="https://github.com/unicef/kindly" 
                   className="text-decoration-none text-white"
@@ -593,7 +577,7 @@ function Main() {
                   Access Software Repository
                 </a>
               </div>
-              <div className="row mb-2">
+              <div className="row">
                 <a 
                   className="text-decoration-none text-white"
                   href="mailto:kindly@unicef.org"
