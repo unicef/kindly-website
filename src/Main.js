@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { HashLink } from "react-router-hash-link";
 import { Accordion, Button, Collapse, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,7 +34,14 @@ function Message(props){
   }
 
   return(
-      <Card className={'cover-rectangle ' + roundCorners + ' ' + borderColor}>
+      <Card 
+        className={'cover-rectangle ' + roundCorners + ' ' + borderColor}
+        style={{
+          top: props.top,
+          left: props.left,
+          zIndex: props.zindex
+        }}
+      >
         <Card.Header>
           <table>
             <tbody>
@@ -55,7 +62,7 @@ function Message(props){
                     <img src={IconMsgBad} alt="Bad Message" width="50" style={{marginRight: '.6em'}}/>
                   </td>
                   <td className="text-start align-top">
-                    Hmm … maybe reconsider this message?
+                    Hmm … maybe<br/>reconsider this<br/>message?
                   </td>
                 </tr>
               </tbody>
@@ -70,7 +77,7 @@ function Message(props){
                     <img src={IconMsgGood} alt="Good Message" width="50" style={{marginRight: '.6em'}}/>
                   </td>
                   <td className="text-start align-top">
-                    Your message looks great! Good to send!
+                    Your message<br/>looks great!<br/>Good to send!
                   </td>
                 </tr>
               </tbody>
@@ -104,6 +111,13 @@ function Main() {
   const [radioState, setRadioState] = useState(1)
   const [colors, setColors] = useState(OriginalColors)
   const [cssProperties, setCssProperties] = useState({})
+  const [dimensions, setDimensions] = useState({
+    width: undefined,
+    height: undefined,
+    top: undefined,
+    left: undefined
+  });
+  const ref = useRef(null)
 
   function handleRadioButton(value) {
     setRadioState(value)
@@ -122,11 +136,43 @@ function Main() {
     }
   }
 
+  // useEffect(() => {
+  //   console.log(
+  //     ref.current.clientHeight,
+  //     ref.current.clientLeft,
+  //     ref.current.clientTop,
+  //     ref.current.clientWidth)
+  //   let node = window.getComputedStyle(ref.current)
+  //   console.log(node.getPropertyValue('margin-top'))
+  // })
+
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Use referenced node to base calculations
+      let node = window.getComputedStyle(ref.current)
+      setDimensions({
+        width: parseInt(ref.current.clientWidth),
+        height: parseInt(ref.current.clientHeight),
+        top: parseInt(node.getPropertyValue('margin-top')),
+        left: parseInt(node.getPropertyValue('margin-left'))
+      });
+
+      console.log(ref.current.clientWidth)
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+
   return (
     <main>
       <div className={'cover-container d-flex w-100 vh-100 p-3 mx-auto flex-column text-center '+colors['background']}>
-        <div className="cover-cover text-center mt-auto">
-          <div className={'cover-title '+colors['title']}>
+        <div className="cover-cover mx-auto mt-auto" ref={ref}>
+          <div className={'cover-title '+colors['title']} >
             See how messages can<br />
             be rethought, Kindly
           </div>
@@ -172,68 +218,70 @@ function Main() {
         </footer>
 
         <div className="background container-fluid vh-100">
-          <div className="row mt-5">
-            <div className="col-2 offset-3">
-              <Message 
-                text={<span>ur&nbsp;so&nbsp;ugly</span>}
-                feedback={!radioState}
-                toxic={true} />
-            </div>
-            <div className="col-4 offset-3">
-              <Message 
-                text={<span>omg&nbsp;did&nbsp;you&nbsp;see&nbsp;what<br/>
-                      they&nbsp;did&nbsp;yesterday?!<br/>
-                      what&nbsp;idiots</span>}
-                feedback={!radioState}
-                toxic={true} />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-3 offset-1">
-              <Message 
-                text={<span>Cool!&nbsp;See&nbsp;you&nbsp;there!</span>} 
-                feedback={!radioState}
-                toxic={false} />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
-            </div>
-          </div>
+          <Message 
+            text={<span>ur&nbsp;so&nbsp;ugly</span>}
+            feedback={!radioState}
+            toxic={true} 
+            top={(dimensions['top']/2 - 60)+'px'}
+            left={(dimensions['left']+35)+'px'}
+            />
 
-          <div className="row">
-            <div className="col-3 offset-9">
-              <Message 
-                text={<span>No&nbsp;that's&nbsp;so&nbsp;dumb</span>}
-                feedback={!radioState}
-                toxic={true} />
-            </div>
-          </div>
+          <Message 
+            text={<span>omg&nbsp;did&nbsp;you&nbsp;see&nbsp;what<br/>
+                  they&nbsp;did&nbsp;yesterday?!<br/>
+                  what&nbsp;idiots</span>}
+            feedback={!radioState}
+            toxic={true} 
+            top={(dimensions['top']/1.7-80)+'px'}
+            left={(dimensions['left']+dimensions['width']-23)+'px'}
+          />
 
-          <div className="row">
-            <div className="col-3 offset-2">
-              <Message 
-                text={<span>The&nbsp;Moana&nbsp;movie&nbsp;is<br />
-                  great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
-                  the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
-                  just&nbsp;freak&nbsp;me&nbsp;out</span>} 
-                feedback={!radioState}
-                toxic={false} />
-            </div>
-          </div>
+          <Message 
+            text={<span>Cool!&nbsp;See&nbsp;you&nbsp;there!</span>} 
+            feedback={!radioState}
+            toxic={false} 
+            top={(dimensions['top']+20)+'px'}
+            left={(dimensions['left']/1.8-120)+'px'}
+          />
 
-          <div className="row">
-            <div className="col-3 offset-8">
-              <Message 
-                text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
-                  that&nbsp;will&nbsp;be&nbsp;okay</span>} 
-                feedback={!radioState}
-                toxic={false} />
-            </div>
-          </div>
+          <Message 
+            text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
+              that&nbsp;will&nbsp;be&nbsp;okay</span>} 
+            feedback={!radioState}
+            toxic={false} 
+            top={(dimensions['top']+dimensions['height']+40)+'px'}
+            left={(dimensions['left']+dimensions['width']-150)+'px'}
+          />
+
+          <Message 
+            text={<span>No&nbsp;that's&nbsp;so&nbsp;dumb</span>}
+            feedback={!radioState}
+            toxic={true} 
+            top={(dimensions['top']+dimensions['height']-60)+'px'}
+            left={(dimensions['left']+dimensions['width'])+'px'}
+            zindex={10}
+          />
+
+          <Message 
+            text={<span>Yesterday's&nbsp;movie&nbsp;is<br />
+              great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
+              the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
+              just&nbsp;freak&nbsp;me&nbsp;out</span>} 
+            feedback={!radioState}
+            toxic={false} 
+            top={(dimensions['top']*1.2+dimensions['height']-8)+'px'}
+            left={(dimensions['left']-115)+'px'}
+          />
+
+          <Message 
+            text={<span>umm&nbsp;yeah&nbsp;I&nbsp;think<br/>
+              that&nbsp;will&nbsp;be&nbsp;okay</span>} 
+            feedback={!radioState}
+            toxic={false} 
+            top={(dimensions['top']+dimensions['height']+40)+'px'}
+            left={(dimensions['left']+dimensions['width']-150)+'px'}
+          />
+
 
         </div>
       </div>
