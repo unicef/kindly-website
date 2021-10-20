@@ -9,9 +9,23 @@ const KINDLY_URL = process.env.REACT_APP_KINDLY_URL
 					? process.env.REACT_APP_KINDLY_URL
 					: "http://localhost:8080/detect"
 
+const PROMPTS = [
+	['I thought the movie was great. I liked it, but not the scary parts. Those freaked me out.', 'What did you think?'],
+	['Should we meet at the library?',' Does that sound okay?'],
+	['Was the presentation okay?', 'I couldn\'t tell...'],
+	['I don\'t really have friends yet and I don\'t know why.'],
+	['omg did you see what he was wearing today?','wasn\'t it ugly?!'],
+	['that weirdo from the party last week is here. she\'s so stupid.','I mean, who even likes her?']
+]
+
+const randomizePrompt = () => {
+	return PROMPTS[Math.floor(Math.random() * PROMPTS.length)];
+}
+
 function KindlyForm() {
 
 	const [inputText, setInputText] = useState();
+	const [prompts, setPrompts] = useState(randomizePrompt());
 
 	const waitStatus = (
 		<table style={{height: '80px'}} className="w-100">
@@ -103,6 +117,10 @@ function KindlyForm() {
 		});
 	}
 
+	const handleGenerate = () => {
+		setPrompts(randomizePrompt())
+	}
+
 	return (
 		<div>
 			<Card>
@@ -114,19 +132,24 @@ function KindlyForm() {
 		    					<b>Kindly Test Message</b>
 		    				</td>
 		    				<td className="text-end">
-		    					<Button variant="outline-primary" className="btn-small">GENERATE NEW</Button>
+		    					<Button 
+		    						variant="outline-primary"
+		    						className="btn-small"
+		    						style={{boxShadow: 'none'}}
+		    						onClick={handleGenerate}>
+		    						GENERATE NEW
+		    					</Button>
 		    				</td>
 		    			</tr>
 		    		</tbody>
 		    	</table>
 			  </Card.Header>
 			  <Card.Body>
-			    <div className="chat-bubble w-75">
-			    	The Moana movie is great. I like it, but not the scary parts. Those just freak me out.
-			    </div>
-			    <div className="chat-bubble w-75">
-			    	What do you think?
-			    </div>
+			  	{prompts && prompts.map((element, index) =>
+			  		<div className="chat-bubble w-75" key={index}>
+			    		{element}
+			    	</div>
+			    )}
 			    <Form.Group 
 			    	className="" 
 			    	controlId="exampleForm.ControlTextarea1"

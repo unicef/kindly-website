@@ -136,7 +136,7 @@ function Main() {
               className="btn-check"
               name="options-outlined"
               id="success-outlined"
-              autocomplete="off"
+              autoComplete="off"
               checked={radioState}
               onChange={() => handleRadioButton(1)}
             />
@@ -152,7 +152,7 @@ function Main() {
               className="btn-check btn-kindly"
               name="options-outlined"
               id="danger-outlined"
-              autocomplete="off"
+              autoComplete="off"
               checked={!radioState}
               onChange={() => handleRadioButton(0)}
             />

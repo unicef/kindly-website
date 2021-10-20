@@ -265,6 +265,14 @@ h1, h2, p {
   background-color: #1955d5;
 }
 
+.btn-outline-primary {
+  border-color: #1955d5;
+}
+
+.btn-outline-primary:hover {
+  background-color: #1955d5;
+}
+
 .btn-small {
   padding: 0.375rem 1.25rem;
   font-size: 0.6em;
