@@ -255,7 +255,7 @@ function Main() {
           />
 
           <Message 
-            text={<span>Yesterday's&nbsp;movie&nbsp;is<br />
+            text={<span>Yesterday's&nbsp;movie&nbsp;was<br />
               great&nbsp;I&nbsp;liked&nbsp;it,&nbsp;but&nbsp;not<br/>
               the&nbsp;scary&nbsp;parts.&nbsp;Those<br/>
               just&nbsp;freak&nbsp;me&nbsp;out</span>} 
@@ -331,7 +331,7 @@ function Main() {
           <div className="row align-items-center pt-5 pb-3">
             <div className="col-lg-7 text-center mx-auto">
               <h1 className="">Think <i>Grammerly</i>,<br/> but for cyberbullying</h1>  
-              <p className="text-grey">When integrated with existing text-based platforms, Kindly allows users choose to check and edit their messages for toxic intent.</p>
+              <p className="text-grey">When integrated with existing text-based platforms, Kindly allows users to check and edit their messages for toxic intent.</p>
             </div>
           </div>
           <div className="row px-lg-5 pb-5 align-items-start">
@@ -399,7 +399,10 @@ function Main() {
           <div className="col-lg-5 mx-auto">
             <p className="unicef-blue-section-header">Protection of childen's rights and data</p>
             <p>To take full account of children’s issues and rights online,
-            UNICEF has developed a Manifesto for data governance to protect
+            UNICEF has developed a <a 
+              href="https://www.unicef.org/globalinsight/reports/better-governance-childrens-data-manifesto"
+              target="_blank" 
+              rel="noreferrer">Manifesto</a> for data governance to protect
             children’s data and their rights and prioritize children’s best
             interests. Thus, UNICEF is uniquely positioned to provide strong
             child data protection guarantees and offer a trusted digital
@@ -412,11 +415,11 @@ function Main() {
             <img src={openSource} alt="Open-source solution" className="img-fluid px-5 px-md-0" />
           </div>
           <div className="col-lg-5 mx-auto">
-            <p className="unicef-blue-section-header">An open-source solution for anyone to contribute</p>
+            <p className="unicef-blue-section-header">An open-source solution for anyone to contribute to</p>
             <p>By developing Kindly as an open-source solution, UNICEF encourages
             and empowers children to be part of the solution to a challenge that
             many of them face directly. Kindly provides systems of iterative
-            improvement that allows the tool to meet the specific needs of
+            improvement that allow the tool to meet the specific needs of
             different communities.</p>
           </div>
           
@@ -463,7 +466,7 @@ function Main() {
                   Kindly was created for children between the ages of 10 and 18 years in an
                   effort to end cyberbullying and make them feel safer. Kindly can be
                   integrated with any platform that provides text-based services (such as
-                  chat interface, email platform) to benefit children of all ages, globally.
+                  chat interface, email platform, etc.) to benefit children, globally.
                   While the current version is available in English, more languages are
                   envisioned in the future.
                 </Accordion.Body>
@@ -522,7 +525,7 @@ function Main() {
         <div className="container-lg">
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-7 mx-auto text-center">
-              <h2 className="px-5">Join us in ending cyberbullying</h2>
+              <h2 className="px-5">Join us in ending cyberbullying!</h2>
             </div>
           </div>
           <div className="row align-items-center g-5 py-5">
