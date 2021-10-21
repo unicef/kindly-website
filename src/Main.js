@@ -399,7 +399,10 @@ function Main() {
           <div className="col-lg-5 mx-auto">
             <p className="unicef-blue-section-header">Protection of childen's rights and data</p>
             <p>To take full account of children’s issues and rights online,
-            UNICEF has developed a <a href="https://www.unicef.org/globalinsight/reports/better-governance-childrens-data-manifesto">Manifesto</a> for data governance to protect
+            UNICEF has developed a <a 
+              href="https://www.unicef.org/globalinsight/reports/better-governance-childrens-data-manifesto"
+              target="_blank" 
+              rel="noreferrer">Manifesto</a> for data governance to protect
             children’s data and their rights and prioritize children’s best
             interests. Thus, UNICEF is uniquely positioned to provide strong
             child data protection guarantees and offer a trusted digital
