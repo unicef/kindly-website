@@ -21,10 +21,56 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es2021": true
+    },
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+      "airbnb",
+      "prettier",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detetect"
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "prettier",
+      "react"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-import-assign": "error",
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off"
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "bracketSpacing": false,
+    "jsxSingleQuote": false,
+    "singleQuote": false,
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 80,
+    "arrowParens": "avoid",
+    "requirePragma": true,
+    "insertPragma": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": ""
+    }
   },
   "browserslist": {
     "production": [
@@ -38,5 +84,19 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://kindly.unicef.io"
+  "homepage": "https://kindly.unicef.io",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1"
+  }
 }
