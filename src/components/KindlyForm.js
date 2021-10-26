@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 
-import { Button, Card, Form, Spinner } from "react-bootstrap";
+import {Button, Card, Form, Spinner} from "react-bootstrap";
 import IconMsgGood from "../img/icon-msg-good.svg";
 import IconMsgBad from "../img/icon-msg-bad.svg";
 
@@ -33,7 +33,7 @@ function KindlyForm() {
   const [prompts, setPrompts] = useState(randomizePrompt());
 
   const waitStatus = (
-    <table style={{ height: "80px" }} className="w-100">
+    <table style={{height: "80px"}} className="w-100">
       <tbody>
         <tr>
           <td className="align-middle text-center">
@@ -67,16 +67,14 @@ function KindlyForm() {
           <td className="px-3">
             <img src={IconMsgBad} alt="Bad Message" width="80" />
           </td>
-          <td className="text-start align-top">
-            Hmm … maybe reconsider this message?
-          </td>
+          <td className="text-start align-top">Hmm … maybe reconsider this message?</td>
         </tr>
       </tbody>
     </table>
   );
 
   const errorStatus = (
-    <table style={{ height: "80px" }} className="w-100">
+    <table style={{height: "80px"}} className="w-100">
       <tbody>
         <tr>
           <td className="align-middle text-center">
@@ -105,15 +103,14 @@ function KindlyForm() {
         "Content-Type": "application/json",
         // 'Authorization': 'Bearer YOUR-TOKEN-GOES-HERE'
       },
-      body: JSON.stringify({ text: inputText }),
+      body: JSON.stringify({text: inputText}),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
 
         if (
-          parseFloat(data.result["offensive"]) >
-          parseFloat(data.result["not-offensive"])
+          parseFloat(data.result["offensive"]) > parseFloat(data.result["not-offensive"])
         ) {
           ReactDOM.render(badStatus, kindlyStatus);
           kindlyStatus.style.backgroundColor = "#ff9f40";
@@ -147,7 +144,7 @@ function KindlyForm() {
                   <Button
                     variant="outline-primary"
                     className="btn-small"
-                    style={{ boxShadow: "none" }}
+                    style={{boxShadow: "none"}}
                     onClick={handleGenerate}
                   >
                     GENERATE NEW
@@ -189,7 +186,7 @@ function KindlyForm() {
             <Button
               variant="primary"
               className="btn-small"
-              style={{ marginTop: 0 }}
+              style={{marginTop: 0}}
               onClick={handleSubmit}
             >
               Check with Kindly
