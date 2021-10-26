@@ -15,10 +15,12 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
+    "lint:js": "eslint .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "env": {
@@ -27,14 +29,12 @@
       "es2021": true
     },
     "extends": [
-      "airbnb",
-      "prettier",
-      "plugin:prettier/recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
     ],
     "settings": {
       "react": {
-        "version": "detetect"
+        "version": "detect"
       }
     },
     "parserOptions": {
@@ -45,31 +45,40 @@
       "sourceType": "module"
     },
     "plugins": [
-      "prettier",
-      "react"
+      "react",
+      "prettier"
     ],
     "rules": {
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "es5",
+          "bracketSpacing": false,
+          "jsxSingleQuote": false,
+          "singleQuote": false,
+          "semi": true,
+          "arrowParens": "avoid",
+          "requirePragma": true,
+          "insertPragma": true
+        }
+      ],
       "no-import-assign": "error",
       "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off"
-    }
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "bracketSpacing": false,
-    "jsxSingleQuote": false,
-    "singleQuote": false,
-    "semi": true,
-    "tabWidth": 2,
-    "printWidth": 80,
-    "arrowParens": "avoid",
-    "requirePragma": true,
-    "insertPragma": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": ""
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": "off",
+      "react/no-array-index-key": "off",
+      "react/no-unescaped-entities": "off",
+      "react/no-unknown-property": [
+        1,
+        {
+          "ignore": [
+            "for",
+            "data-*"
+          ]
+        }
+      ],
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off"
     }
   },
   "browserslist": {
@@ -87,7 +96,6 @@
   "homepage": "https://kindly.unicef.io",
   "devDependencies": {
     "eslint": "^7.2.0",
-    "eslint-config-airbnb": "18.2.1",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -97,6 +105,10 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^7.0.4",
+    "lint-staged": ">=10",
     "prettier": "^2.4.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
