@@ -47,11 +47,7 @@ Kindly aims to make children feel safer by leveraging the latest advances in tec
               return s.replace(/~and~/g, "&");
             })
             .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
         }
       })(window.location);
     </script>
