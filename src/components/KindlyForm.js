@@ -155,16 +155,16 @@ function KindlyForm() {
 			    	controlId="exampleForm.ControlTextarea1"
 			   	>
 				    <Form.Control 
-				    	as="textarea" 
-				    	placeholder="How would you respond? Type here."
-				    	rows={3}
-				    	className="shadow-none p-3 mt-4"
-				    	style={{
-				    		borderRadius: "20px 20px 0 0", 
-				    		resize: 'none',
-				    		border: 0
-				    	}}
-				    	onChange={e => setInputText(e.target.value)} 
+						as="textarea"
+						placeholder="How would you respond? Type here*"
+						rows={3}
+						className="shadow-none p-3 mt-4"
+						style={{
+							borderRadius: "20px 20px 0 0",
+							resize: 'none',
+							border: 0
+						}}
+						onChange={e => setInputText(e.target.value)}
 				    />
 				</Form.Group>
 				<div className="text-end" style={{
@@ -183,6 +183,10 @@ function KindlyForm() {
 			    </div>
 			  </Card.Body>
 			</Card>
+			<div style={{fontStyle: "italic", marginTop: "0.6em", fontSize: "0.85em"}}>
+			* Please do not enter personally identifiable information.<br/>
+			&nbsp;&nbsp;This form does not store any data.
+			</div>
 			<div id="kindly-status" className="text-white">{waitStatus}</div>
 		</div>
 	)
