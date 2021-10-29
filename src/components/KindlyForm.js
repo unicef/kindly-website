@@ -5,9 +5,15 @@ import { Button, Card, Form, Spinner } from 'react-bootstrap';
 import IconMsgGood from '../img/icon-msg-good.svg';
 import IconMsgBad from '../img/icon-msg-bad.svg';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 const KINDLY_URL = process.env.REACT_APP_KINDLY_URL
 					? process.env.REACT_APP_KINDLY_URL
 					: "http://localhost:8080/detect"
+
+const SCRIPT_URL = process.env.REACT_APP_SCRIPT_URL
 
 const PROMPTS = [
 	['I thought the movie was great. I liked it, but not the scary parts. Those freaked me out.', 'What did you think?'],
@@ -22,7 +28,7 @@ const randomizePrompt = () => {
 	return PROMPTS[Math.floor(Math.random() * PROMPTS.length)];
 }
 
-function KindlyForm() {
+function KindlyForm(props) {
 
 	const [inputText, setInputText] = useState();
 	const [prompts, setPrompts] = useState(randomizePrompt());
@@ -87,6 +93,14 @@ function KindlyForm() {
 		kindlyStatus.style.backgroundColor = '#000'
 		kindlyStatus.style.visibility = 'visible'
 
+		if(props.contribute) {
+			let formData = new FormData();
+			formData.append('text', inputText)
+			fetch(SCRIPT_URL, { method: 'POST', body: formData })
+		      .then(response => console.log('Success!', response))
+		      .catch(error => console.error('Error!', error.message))
+		}
+
 		fetch(KINDLY_URL, {
 	  		method: 'POST',
 	  		mode: 'cors',
@@ -129,7 +143,7 @@ function KindlyForm() {
 		    		<tbody>
 		    			<tr>
 		    				<td>
-		    					<b>Kindly Test Message</b>
+		    					<b>{props.contribute ? 'Contribute to Kindly' : 'Kindly Test Message'}</b>
 		    				</td>
 		    				<td className="text-end">
 		    					<Button 
@@ -146,7 +160,7 @@ function KindlyForm() {
 			  </Card.Header>
 			  <Card.Body className="p-4">
 			  	{prompts && prompts.map((element, index) =>
-			  		<div className="chat-bubble w-75" key={index}>
+			  		<div className="chat-bubble w-75 text-start" key={index}>
 			    		{element}
 			    	</div>
 			    )}
@@ -183,10 +197,12 @@ function KindlyForm() {
 			    </div>
 			  </Card.Body>
 			</Card>
+			{ !props.contribute &&
 			<div style={{fontStyle: "italic", marginTop: "0.6em", fontSize: "0.85em"}}>
 			* Please do not enter personally identifiable information.<br/>
 			&nbsp;&nbsp;This form does not store any data.
 			</div>
+			}
 			<div id="kindly-status" className="text-white">{waitStatus}</div>
 		</div>
 	)

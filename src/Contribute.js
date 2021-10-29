@@ -23,10 +23,12 @@ function Contribute() {
             </div>
             <h1 className="my-5">Contribute by training Kindly's data</h1>  
             <p className="lead">After testing a string of text with Kindly, indicate if your entry contained cyberbullying or a toxic intent to improve Kindly's understanding.</p>
-            <p> Reply to the message and check your entry with Kindly to see if your message is toxic or considered cyberbullying.</p>
+            <div className="mt-5" style={{fontStyle: "italic", fontSize: "0.85em"}}>
+              <b>Please note:</b> Anything typed and tested in the message box will be collected, reviewed, and added to Kindly's public data set. Do not enter personally identifiable information.
+            </div>
           </div>
           <div className="col-lg-5 offset-lg-1">
-            <KindlyForm />
+            <KindlyForm contribute={true}/>
           </div>
         </div>
         <footer className="cover-footer mt-5 mx-auto text-center pb-4">
@@ -63,8 +65,7 @@ function Contribute() {
               can help train and improve a tool that will stop toxic messages before they
               are sent.</p>
             </div>
-          </div>
-          
+          </div> 
         </div>
       </div>
 

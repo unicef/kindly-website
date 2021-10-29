@@ -18,6 +18,10 @@ Summary of main files:
 * [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
 * [src/img](src/img) folder contains all the illustrations for the website in SVG format.
 
+## Configuration
+
+Configure an environment variable `REACT_APP_SCRIPT_URL` as per the instructions provided in [jamiewilson/form-to-google-sheets](https://github.com/jamiewilson/form-to-google-sheets) to store submissions from the `/contribute` form into a Google Spreadsheet.
+
 ## Hosting
 
 The website is hosted using [GitHub Pages](https://pages.github.com/) using the `gh-pages` branch. The process of updating the website is automated through [GitHub Actions](https://docs.github.com/en/actions) through [.github/workflows/build-deploy.yml](.github/workflows/build-deploy.yml) following the documentation provided in the following article: [Deploying a React App Using GitHub Pages and GitHub Actions](https://codeburst.io/deploying-a-react-app-using-github-pages-and-github-actions-7fc14d380796)
