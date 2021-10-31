@@ -5,9 +5,15 @@ import {Button, Card, Form, Spinner} from "react-bootstrap";
 import IconMsgGood from "../img/icon-msg-good.svg";
 import IconMsgBad from "../img/icon-msg-bad.svg";
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 const KINDLY_URL = process.env.REACT_APP_KINDLY_URL
   ? process.env.REACT_APP_KINDLY_URL
   : "http://localhost:8080/detect";
+
+const SCRIPT_URL = process.env.REACT_APP_SCRIPT_URL
 
 const PROMPTS = [
   [
