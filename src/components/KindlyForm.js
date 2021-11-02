@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Button, Card, Form, Spinner } from 'react-bootstrap';
@@ -32,6 +32,43 @@ function KindlyForm(props) {
 
 	const [inputText, setInputText] = useState();
 	const [prompts, setPrompts] = useState(randomizePrompt());
+	const [rowNumber, setRowNumber] = useState(2);
+	const refRow = useRef(rowNumber)
+
+	// There is a problem with stale values in the state,
+	// if done in the usual way. Need to use references to overcome it
+	// See: https://stackoverflow.com/a/55156813/5354742
+	useEffect(()=> {
+		refRow.current = rowNumber
+	}, [rowNumber])
+
+	const handleFeedback = (e, value) => {
+		e.preventDefault();
+		const kindlyStatus = document.getElementById("kindly-status")
+		ReactDOM.render(waitStatus, kindlyStatus);
+		kindlyStatus.style.backgroundColor = 'grey'
+
+		let formData = new FormData();
+		formData.append('text', inputText)
+		formData.append('intent', value)
+		formData.append('row', refRow.current)
+
+		fetch(SCRIPT_URL, { method: 'POST', body: formData })
+		  .then(async(response) => {
+		  	const r = await response.json();
+		  	if(r['result']==='error'){
+		  		console.log('Something went wrong')
+		  		console.log(r['error'])
+		  	}
+		  	setInputText('')
+		  	const kindlyStatus = document.getElementById("kindly-status")
+			ReactDOM.render(thankyouStatus, kindlyStatus)
+		  })
+		  .catch(async(error) => {
+		  	console.log('Something went wrong')
+		  	console.log(error)
+		  })
+	}
 
 	const waitStatus = (
 		<table style={{height: '80px'}} className="w-100">
@@ -50,11 +87,30 @@ function KindlyForm(props) {
 		<table>
 			<tbody>
 				<tr>
-					<td className="px-3">
+					<td className="px-3" rowSpan="2">
 						<img src={IconMsgGood} alt="Good Message" width="80"/>
 					</td>
 					<td className="text-start align-top">
 						Your message looks great! Good to send!
+					</td>
+				</tr>
+				<tr>
+					<td className="text-start align-top">
+					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
+					<Button 
+						variant="outline-light"
+						className="btn-small ml-3"
+						style={{boxShadow: 'none', float: 'right'}}
+						onClick={(e) => handleFeedback(e, 'yes')}>
+						NO
+					</Button>
+					<Button 
+						variant="outline-light"
+						className="btn-small mx-3"
+						style={{boxShadow: 'none', float: 'right'}}
+						onClick={(e) => handleFeedback(e, 'no')}>
+						YES
+					</Button>
 					</td>
 				</tr>
 			</tbody>
@@ -65,11 +121,30 @@ function KindlyForm(props) {
 		<table>
 			<tbody>
 				<tr>
-					<td className="px-3">
+					<td className="px-3" rowSpan="2">
 						<img src={IconMsgBad} alt="Bad Message" width="80"/>
 					</td>
 					<td className="text-start align-top">
 						Hmm … maybe reconsider this message?
+					</td>
+				</tr>
+				<tr>
+					<td className="text-start align-top">
+					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
+					<Button 
+						variant="outline-light"
+						className="btn-small ml-3"
+						style={{boxShadow: 'none', float: 'right'}}
+						onClick={(e) => handleFeedback(e, 'no')}>
+						NO
+					</Button>
+					<Button 
+						variant="outline-light"
+						className="btn-small mx-3"
+						style={{boxShadow: 'none', float: 'right'}}
+						onClick={(e) => handleFeedback(e, 'yes')}>
+						YES
+					</Button>
 					</td>
 				</tr>
 			</tbody>
@@ -86,6 +161,19 @@ function KindlyForm(props) {
     	</table>
 	)
 
+	const thankyouStatus = (
+		<table style={{height: '80px'}} className="w-100">
+  			<tbody>
+    			<tr>
+    				<td className="align-middle text-center">
+    					Thank you, your contribution has been recorded.<br/>
+						Do you want to contribute again?
+					</td>
+    			</tr>
+    		</tbody>
+    	</table>
+	)
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const kindlyStatus = document.getElementById("kindly-status")
@@ -96,9 +184,21 @@ function KindlyForm(props) {
 		if(props.contribute) {
 			let formData = new FormData();
 			formData.append('text', inputText)
+
 			fetch(SCRIPT_URL, { method: 'POST', body: formData })
-		      .then(response => console.log('Success!', response))
-		      .catch(error => console.error('Error!', error.message))
+		      .then(async(response) => {
+		      	const r = await response.json();
+		      	const updatedRow=parseInt(r.row)
+		      	setRowNumber(updatedRow);
+		      	if(r['result']==='error'){
+		      		console.log('Something went wrong')
+		      		console.log(r['error'])
+		      	}
+		      })
+		      .catch(async(error) => {
+		      	console.log('Something went wrong')
+		      	console.log(error)
+		      })
 		}
 
 		fetch(KINDLY_URL, {
@@ -178,6 +278,7 @@ function KindlyForm(props) {
 							resize: 'none',
 							border: 0
 						}}
+						value={inputText}
 						onChange={e => setInputText(e.target.value)}
 				    />
 				</Form.Group>
