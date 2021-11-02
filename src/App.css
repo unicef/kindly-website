@@ -244,6 +244,12 @@ h1, h2, p {
   color: #61dafb;
 }
 
+.nav-link-kindly {
+  color: #00AEEF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

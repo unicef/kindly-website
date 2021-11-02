@@ -1,0 +1,15 @@
+<svg width="200" height="159" viewBox="0 0 200 159" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(27 20)">
+            <rect stroke="#292929" fill="#E3F7FF" fill-rule="nonzero" transform="rotate(180 45.225 16.615)" width="90.45" height="33.23" rx="11.21"/>
+            <path stroke="#292929" fill="#00AEEF" fill-rule="nonzero" d="M75.84 16.61H14.61"/>
+            <path d="M34.59 40.86h104.19c4.41 0 8 2.67 8 6v41.69c0 3.3-3.58 6-8 6H34.59c-4.41 0-8-2.67-8-6V46.82c.01-3.29 3.59-5.96 8-5.96z" stroke="#292929" fill="#292929" fill-rule="nonzero"/>
+            <path stroke="#FFF" d="M46.15 60.28h80.8M46.38 75.05h80.81"/>
+            <circle stroke="#292929" fill="#00AEEF" fill-rule="nonzero" cx="31.54" cy="84.73" r="30.75"/>
+            <path d="M11.92 84.73c1.35 0 2.14 1.5 2.14 2.93 0 1.43-1.5 4.29-2.71 6.36-1.21 2.07-.72 2.58-.72 3.22a3.57 3.57 0 0 0 3 2.58h7.51a2.15 2.15 0 0 1 2.15 3c-.79 2.36-3.34 10.73-3.82 12.16-.48 1.43-1.21 3.81-3.72 3.81-2.51 0-7.08.07-8.22 0-1.14-.07-5.25-1.74-6.63-5s-1-13.44 0-15.23c1-1.79 3.94-5.51 5.51-8.44 1.57-2.93 3.37-5.39 5.51-5.39z" stroke="#292929" fill="#00AEEF" fill-rule="nonzero"/>
+            <circle fill="#292929" fill-rule="nonzero" cx="20.51" cy="77.94" r="1.5"/>
+            <path d="M49.2 79a17.46 17.46 0 0 1-28.69 13.37M31.57 77.94a5 5 0 0 1 4.5-5.43 5.23 5.23 0 0 1 4.53 2.09" stroke="#292929" fill="#00AEEF" fill-rule="nonzero"/>
+        </g>
+        <path d="M0 0h200v159H0z"/>
+    </g>
+</svg>
