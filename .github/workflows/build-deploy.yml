@@ -30,6 +30,7 @@ jobs:
       env:
         REACT_APP_KINDLY_URL: ${{ secrets.REACT_APP_KINDLY_URL }}
         REACT_APP_PUBLIC_URL: ${{ secrets.REACT_APP_PUBLIC_URL }}
+        REACT_APP_SCRIPT_URL: ${{ secrets.REACT_APP_SCRIPT_URL }}
 
     - name: Run tests
       run: yarn run test
