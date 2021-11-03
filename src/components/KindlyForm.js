@@ -212,6 +212,8 @@ function KindlyForm(props) {
 	const [prompts, setPrompts] = useState(randomizePrompt());
 	const [rowNumber, setRowNumber] = useState(2);
 	const refRow = useRef(rowNumber)
+	const refDiv = useRef(null)
+
 
 	// There is a problem with stale values in the state,
 	// if done in the usual way. Need to use references to overcome it
@@ -219,6 +221,24 @@ function KindlyForm(props) {
 	useEffect(()=> {
 		refRow.current = rowNumber
 	}, [rowNumber])
+
+	// Send resize message to parent when this page is embedded
+	// into a parent website via an iframe
+	useEffect(() => {
+		// Handler to call on window resize
+		function handleResize() {
+			window.parent.postMessage({
+				width:refDiv.current.clientWidth,
+				height: refDiv.current.clientHeight
+				}, "*")
+		}
+		// Add event listener
+		window.addEventListener("resize", handleResize);
+		// Call handler right away so state gets updated with initial window size
+		handleResize();
+		// Remove event listener on cleanup
+		return () => window.removeEventListener("resize", handleResize);
+	}, []); // Empty array ensures that effect is only run on mount
 
 	const handleFeedback = (e, value) => {
 		e.preventDefault();
@@ -272,6 +292,7 @@ function KindlyForm(props) {
 						Your message looks great! Good to send!
 					</td>
 				</tr>
+				{props.contribute &&
 				<tr>
 					<td className="text-start align-top">
 					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
@@ -291,6 +312,7 @@ function KindlyForm(props) {
 					</Button>
 					</td>
 				</tr>
+				}
 			</tbody>
 		</table>
 	)
@@ -306,6 +328,7 @@ function KindlyForm(props) {
 						Hmm … maybe reconsider this message?
 					</td>
 				</tr>
+				{props.contribute &&
 				<tr>
 					<td className="text-start align-top">
 					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
@@ -325,6 +348,7 @@ function KindlyForm(props) {
 					</Button>
 					</td>
 				</tr>
+				}
 			</tbody>
 		</table>
 	)
@@ -414,7 +438,7 @@ function KindlyForm(props) {
 	}
 
 	return (
-		<div>
+		<div ref={refDiv}>
 			<Card>
 			  <Card.Header className="text-blue p-4">
 			  	<table className="w-100">

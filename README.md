@@ -31,11 +31,11 @@ The website is hosted using [GitHub Pages](https://pages.github.com/) using the 
 The Kindly Form is embeddable for demo purposes into other websites, such as unicef.org, using the following HTML code:
 
 ```html
-<iframe
-  src="https://kindly.unicef.io/form"
-  style="width: 400px; height: 600px; border: none;"
-></iframe>
+<script src="https://kindly.unicef.io/postresizemessage.js">
+<iframe src="https://kindly.unicef.io/form" style="border: none;" title="Kindly Form">You must have a browser that supports iFrames</iframe>
 ```
+
+The code above implements [Window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) to safely enable cross-origin communication between Window objects, that is the iframe content and the host page, and resize the iframe to make it responsive within the page where it is embeded.
 
 _⚠️&nbsp;&nbsp;Note that this form leverages an API endpoint that has the origin restricted to a shortlist of allowed domains, and it will otherwise not work from any generic website._
 
