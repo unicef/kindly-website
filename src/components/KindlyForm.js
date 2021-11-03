@@ -114,6 +114,7 @@ function KindlyForm(props) {
 						Your message looks great! Good to send!
 					</td>
 				</tr>
+				{props.contribute &&
 				<tr>
 					<td className="text-start align-top">
 					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
@@ -133,6 +134,7 @@ function KindlyForm(props) {
 					</Button>
 					</td>
 				</tr>
+				}
 			</tbody>
 		</table>
 	)
@@ -148,6 +150,7 @@ function KindlyForm(props) {
 						Hmm … maybe reconsider this message?
 					</td>
 				</tr>
+				{props.contribute &&
 				<tr>
 					<td className="text-start align-top">
 					<span style={{fontSize: '0.9em'}}>DO YOU AGREE?</span> 
@@ -167,6 +170,7 @@ function KindlyForm(props) {
 					</Button>
 					</td>
 				</tr>
+				}
 			</tbody>
 		</table>
 	)
