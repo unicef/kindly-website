@@ -31,7 +31,7 @@ The website is hosted using [GitHub Pages](https://pages.github.com/) using the 
 The Kindly Form is embeddable for demo purposes into other websites, such as unicef.org, using the following HTML code:
 
 ```html
-<script src="https://kindly.unicef.io/postresizemessage.js">
+<script src="https://kindly.unicef.io/postresizemessage.js" />
 <iframe src="https://kindly.unicef.io/form" style="border: none;" title="Kindly Form">You must have a browser that supports iFrames</iframe>
 ```
 
