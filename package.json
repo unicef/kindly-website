@@ -77,7 +77,7 @@
     ],
     "rules": {
       "prettier/prettier": [
-        "warn",
+        "error",
         {
           "printWidth": 90,
           "bracketSpacing": false,
