@@ -18,11 +18,11 @@ function Contribute() {
             <div className="pb-3">
               <a href="/" className="nav-link-kindly">
                 <img src={IconArrowLeftLightblue} className="icon-arrow-down" alt="Downward Arrow"/>
-                &nbsp;&nbsp;Learn about kindly
+                &nbsp;&nbsp;Learn about Kindly
               </a>
             </div>
-            <h1 className="my-5">Contribute by training Kindly's data</h1>  
-            <p className="lead">After testing a string of text with Kindly, indicate if your entry contained cyberbullying or a toxic intent to improve Kindly's understanding.</p>
+            <h1 className="my-5">Improve Kindly by contributing to the training dataset</h1>  
+            <p className="lead">After testing a string of text with Kindly, indicate if your entry contained cyberbullying or toxic intent. This will help improve Kindly's understanding.</p>
             <div className="mt-5" style={{fontStyle: "italic", fontSize: "0.9em"}}>
               <b>Please note:</b> Anything typed and tested in the message box will be collected, reviewed, and added to Kindly's public data set. Do not enter personally identifiable information.
             </div>
@@ -62,7 +62,7 @@ function Contribute() {
                 className="pr-3"/>
               <h3>Be part of the solution to cyberbullying</h3>  
               <p>Kindly is a proactive solution to the pressing issue of cyberbullying. You
-              can help train and improve a tool that will stop toxic messages before they
+              can help train and improve this tool that will stop toxic messages before they
               are sent.</p>
             </div>
           </div> 
