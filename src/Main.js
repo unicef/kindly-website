@@ -327,7 +327,7 @@ function Main() {
       </div>
 
 
-      <div className="p-5 background-light-blue text-blue" id="how-kindly-works">
+      <div className="p-5 background-light-blue text-blue" id="contribute-to-kindly">
         <div className="container-lg">
           <div className="row align-items-center pt-5 pb-3">
             <div className="col-md-8 text-center mx-auto">
