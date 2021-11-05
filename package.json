@@ -51,8 +51,8 @@
       "eslint:recommended",
       "plugin:react/recommended",
       "prettier",
-      "plugin:prettier/recommended",
-      "plugin:jest/recommended"
+      "plugin:jest/recommended",
+      "plugin:prettier/recommended"
     ],
     "settings": {
       "react": {
@@ -77,7 +77,7 @@
     ],
     "rules": {
       "prettier/prettier": [
-        "error",
+        "warn",
         {
           "printWidth": 90,
           "bracketSpacing": false,
