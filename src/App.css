@@ -201,6 +201,17 @@ p {
   padding: 0.6em 2em 0.6em 2em;
 }
 
+.background-light-blue .btn-outline-light {
+  border: solid 1px #1955d5;
+  color: #1955d5;
+  box-shadow: none;
+}
+
+.background-light-blue .btn-outline-light:hover {
+  background-color: #1955d5;
+  color: #def5ff;
+}
+
 .msgGood {
   background-color: #46c66d;
   color: white;

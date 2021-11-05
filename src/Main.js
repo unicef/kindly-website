@@ -405,6 +405,30 @@ function Main() {
         </div>
       </div>
 
+
+      <div className="p-5 background-light-blue text-blue" id="how-kindly-works">
+        <div className="container-lg">
+          <div className="row align-items-center pt-5 pb-3">
+            <div className="col-md-8 text-center mx-auto">
+              <h1 className="pb-3">Don't just test, but improve Kindly!</h1>  
+              <p className="px-2">
+                Contribute to Kindly's understanding of message intent by submitting any
+                sentence with Kindly and flagging if it has a cyberbullying intent or not.
+              </p>
+              <Button 
+                variant="outline-light" 
+                style={{minWidth: "12em"}}
+                className="my-3"
+                href="/contribute"
+
+              >
+                Contribute&nbsp;&nbsp;>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="p-5" id="how-kindly-works">
         <div className="container-lg">
           <div className="row align-items-center pt-5 pb-3">
@@ -662,13 +686,24 @@ function Main() {
       </div>
 
       <div className="p-5 background-blue text-white">
-        <div className="container-lg">
+        <div className="container-lg p-5">
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-7 mx-auto text-center">
               <h2 className="px-5">Join us in ending cyberbullying!</h2>
             </div>
           </div>
           <div className="row align-items-center g-5 py-5">
+            <div className="col-lg-4 mx-auto text-center">
+              <p className="lead">Contribute data</p>
+              <p>Teach Kindly to recognize cyberbullying by submitting text and evaluating feedback</p>
+              <Button 
+                variant="outline-light" 
+                style={{minWidth: "12em"}}
+                href="/contribute"
+              >
+                Contribute
+              </Button>
+            </div>
             <div className="col-lg-4 mx-auto text-center">
               <p className="lead">Stay updated</p>
               <p>
@@ -715,12 +750,17 @@ function Main() {
               </p>
             </div>
             <div className="col-3 mx-auto text-white">
-              <div className="row mb-4">
+              <div className="row mb-3">
                 <HashLink to="#test-kindly" className="text-decoration-none text-white ">
-                  Test Kindly
+                  Learn
                 </HashLink>
               </div>
-              <div className="row mb-4">
+              <div className="row mb-3">
+                <HashLink to="/contribute" className="text-decoration-none text-white ">
+                  Contribute data
+                </HashLink>
+              </div>
+              <div className="row mb-3">
                 <a
                   href="https://github.com/unicef/kindly"
                   className="text-decoration-none text-white"
@@ -736,7 +776,7 @@ function Main() {
                   href="mailto:kindly@unicef.org"
                   rel="noreferrer"
                 >
-                  Contact Kindly
+                  Contact
                 </a>
               </div>
             </div>
