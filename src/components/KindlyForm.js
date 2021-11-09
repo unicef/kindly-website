@@ -288,9 +288,15 @@ function KindlyForm(props) {
 					<td className="px-3" rowSpan="2">
 						<img src={IconMsgGood} alt="Good Message" width="80"/>
 					</td>
-					<td className="text-start align-top">
-						Your message looks great! Good to send!
-					</td>
+					{props.contribute ?
+						<td className="text-start align-top">
+							No cyberbulling intent detected
+						</td>
+						: <td className="text-start align-top">
+							Your message looks great!<br/>
+							Good to send!
+						</td>
+					}
 				</tr>
 				{props.contribute &&
 				<tr>
@@ -324,9 +330,14 @@ function KindlyForm(props) {
 					<td className="px-3" rowSpan="2">
 						<img src={IconMsgBad} alt="Bad Message" width="80"/>
 					</td>
-					<td className="text-start align-top">
-						Hmm … maybe reconsider this message?
-					</td>
+					{props.contribute ?
+						<td className="text-start align-top">
+							Cyberbullying intent detected
+						</td>
+						: <td className="text-start align-top">
+							Hmm … maybe reconsider this message?
+						</td>
+					}
 				</tr>
 				{props.contribute &&
 				<tr>
