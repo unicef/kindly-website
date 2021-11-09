@@ -23,11 +23,43 @@ function Contribute() {
             </div>
             <h1 className="my-5">Improve Kindly by contributing to the training dataset</h1>  
             <p className="lead">After testing a string of text with Kindly, indicate if your entry contained cyberbullying or toxic intent. This will help improve Kindly's understanding.</p>
-            <div className="mt-5" style={{fontStyle: "italic", fontSize: "0.9em"}}>
-              <b>Please note:</b> Anything typed and tested in the message box will be collected, reviewed, and added to Kindly's public data set. Do not enter personally identifiable information.
+            <div className="mt-5" style={{fontSize: "0.95em"}}>
+              <p>
+                Thank you for helping us build and improve the machine learning
+                model that will power Kindly.
+              </p>
+              <p>
+                Taking care of your information is important to us, and we ask
+                you <b>not</b> to provide any personal data in the message box.
+              </p>
+              <p>
+                Personal data means any information that lets us identify you or
+                the device you use including your name, address, phone number,
+                email address, identification number (for you or your device),
+                location data, or any attribute that may be linked to you as an
+                individual. We ask you <b>not</b> to include any such data related
+                to yourself or others in your message.
+              </p>
+              <p>
+                The data you submit through the message box will be stored
+                awaiting human review. If your message includes any personal data,
+                our team will safely remove and destroy it prior to including
+                your submission in the data set.
+              </p>
+              <p>
+                If you are under 13 years old, you should make sure you have the
+                permission of your parents or guardian prior to giving us any
+                information. Moreover, we would encourage anyone under 18 to
+                discuss their participation with their parents or guardian.
+              </p>
+              <p>
+                If you have any questions concerns about how we will use your
+                data, please contact us at <a href="mailto:kindly@unicef.org">
+                kindly@unicef.org</a>
+              </p>
             </div>
           </div>
-          <div className="col-lg-5 offset-lg-1">
+          <div className="col-lg-5">
             <KindlyForm contribute={true}/>
           </div>
         </div>
