@@ -76,18 +76,8 @@
       "prettier"
     ],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 90,
-          "bracketSpacing": false,
-          "trailingComma": "es5"
-        }
-      ],
       "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/no-unknown-property": "off",
-      "react/no-unescaped-entities": "off"
+      "react/react-in-jsx-scope": "off"
     },
     "overrides": [
       {
@@ -97,6 +87,9 @@
       }
     ]
   },
+  "eslintIgnore": [
+    "build/"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -109,6 +102,11 @@
       "last 1 safari version"
     ]
   },
+  "prettier": {
+    "printWidth": 90,
+    "bracketSpacing": false,
+    "trailingComma": "es5"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -116,10 +114,12 @@
   },
   "lint-staged": {
     "*.+(js|jsx|html)": [
-      "eslint . --fix"
+      "eslint . --fix",
+      "git add"
     ],
     "*.+(json|css|md)": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   }
 }
