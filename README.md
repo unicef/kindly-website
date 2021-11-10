@@ -1,6 +1,6 @@
 # Kindly Website
 
-Public website for Kindly hosted at https://kindly.unicef.io. 
+Public website for Kindly hosted at https://kindly.unicef.io.
 For the main Kindly software code repository, refer to [unicef/kindly](https://github.com/unicef/kindly).
 
 ## Overview
@@ -11,12 +11,12 @@ Original website design by [Kristina Tlusty](https://www.linkedin.com/in/kristin
 
 Summary of main files:
 
-* [src/index.js](src/index.js) provides the entrypoint to the application, which mostly includes `App.css`
-* [src/App.js](src/App.js) uses [React Router](https://reactrouter.com/) to serve two pages:
-	* [src/Main.js] the website homepage that provides all the content, and layout using Bootstrap.
-	* [src/Form.js] provides an embeddable component to try out Kindly, coded in [components/KindlyForm.js](components/KindlyForm.js)
-* [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
-* [src/img](src/img) folder contains all the illustrations for the website in SVG format.
+- [src/index.js](src/index.js) provides the entrypoint to the application, which mostly includes `App.css`
+- [src/App.js](src/App.js) uses [React Router](https://reactrouter.com/) to serve two pages:
+  - [src/Main.js] the website homepage that provides all the content, and layout using Bootstrap.
+  - [src/Form.js] provides an embeddable component to try out Kindly, coded in [components/KindlyForm.js](components/KindlyForm.js)
+- [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
+- [src/img](src/img) folder contains all the illustrations for the website in SVG format.
 
 ## Configuration
 
@@ -88,5 +88,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 This repository contains both software and content, and a different license applies to each.
 
-* **Software** included in this repository is licensed under the [MIT License](LICENSE). Please note that this license only applies to the software used to create Kindly public website, and a different software license applies to the software that Kindly runs. Refer to [unicef/kindly](https://github.com/unicef/kindly) for additional information.
-* **Content** included in this repository is licenses under the [Creative Commons Attribution-ShareAlike 4.0](LICENSE.content.md)
+- **Software** included in this repository is licensed under the [MIT License](LICENSE). Please note that this license only applies to the software used to create Kindly public website, and a different software license applies to the software that Kindly runs. Refer to [unicef/kindly](https://github.com/unicef/kindly) for additional information.
+- **Content** included in this repository is licenses under the [Creative Commons Attribution-ShareAlike 4.0](LICENSE.content.md)

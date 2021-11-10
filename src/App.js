@@ -1,6 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-
+import React from "react";
+import {Switch, Route} from "react-router-dom";
 import Main from './Main';
 import Form from './Form';
 import Contribute from './Contribute';
@@ -13,6 +12,6 @@ const App = () => {
       <Route exact path='/contribute' component={Contribute}></Route>
     </Switch>
   );
-}
+};
 
 export default App;

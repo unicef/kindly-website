@@ -19,12 +19,82 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "homepage": "https://kindly.unicef.io",
+  "devDependencies": {
+    "@html-eslint/eslint-plugin": "^0.11.0",
+    "@html-eslint/parser": "^0.11.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.1.1"
   },
   "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "prettier",
+      "plugin:jest/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "html/html-extensions": [
+        ".html"
+      ]
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "html",
+      "jest",
+      "react",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "printWidth": 90,
+          "bracketSpacing": false,
+          "trailingComma": "es5"
+        }
+      ],
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/no-unknown-property": "off",
+      "react/no-unescaped-entities": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ]
+      }
     ]
   },
   "browserslist": {
@@ -39,5 +109,17 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://kindly.unicef.io"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|html)": [
+      "eslint . --fix"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
+  }
 }
