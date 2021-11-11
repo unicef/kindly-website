@@ -8,6 +8,6 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run ESLint
-      run: eslint . --fix --ext .js,.jsx,.ts,.tsx,.md,.json
+      run: yarn run eslint . --fix --ext .js,.jsx,.ts,.tsx,.md,.json
     - name: Run prettier
-      run: prettier --write "./src/**/*.{ts,tsx,js,md}"
+      run: yarn run prettier --write "./src/**/*.{ts,tsx,js,md}"
