@@ -18,6 +18,37 @@ Summary of main files:
 - [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
 - [src/img](src/img) folder contains all the illustrations for the website in SVG format.
 
+## SetUp For New Contributors
+
+The Kindly public website uses the `yarn` package manager in place of the default `npm`. Visit [yarnpkg/getting-started](https://yarnpkg.com/getting-started) to learn more about yarn package manager.
+
+Please note that the default operating system for [kindly](https://github.com/unicef/kindly) and [kindly-website](https://github.com/unicef/kindly-website) is Linux but if you are using Windows, you can use the wsl([windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/#:~:text=The%20Windows%20Subsystem%20for%20Linux,machine%20or%20dual%2Dboot%20setup.)) and any distro you are comfortable with.
+
+Update the Linux packages
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+Install yarn package manager. Skip this step if yarn is already installed.
+```bash
+npm install -g yarn
+```
+
+Clone and access the repository
+```bash
+git clone https://github.com/unicef/kindly-website.git
+cd kindly-website
+```
+
+Install dependencies
+```bash
+yarn
+```
+or
+```bash
+yarn install
+```
+
 ## Configuration
 
 Configure an environment variable `REACT_APP_SCRIPT_URL` as per the instructions provided in [jamiewilson/form-to-google-sheets](https://github.com/jamiewilson/form-to-google-sheets) to store submissions from the `/contribute` form into a Google Spreadsheet.
