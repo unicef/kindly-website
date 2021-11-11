@@ -20,7 +20,7 @@ Summary of main files:
 
 ## SetUp For New Contributors
 
-The Kindly public website uses the `yarn` package manager in place of the default `npm`. Vsit [yarnpkg/getting-started](https://yarnpkg.com/getting-started) to learn more about yarn package manager.
+The Kindly public website uses the `yarn` package manager in place of the default `npm`. Visit [yarnpkg/getting-started](https://yarnpkg.com/getting-started) to learn more about yarn package manager.
 
 Please note that the default operating system for [kindly](https://github.com/unicef/kindly) and [kindly-website](https://github.com/unicef/kindly-website) is Linux but if you are using Windows, you can use the wsl([windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/#:~:text=The%20Windows%20Subsystem%20for%20Linux,machine%20or%20dual%2Dboot%20setup.)) and any distro you are comfortable with.
 
