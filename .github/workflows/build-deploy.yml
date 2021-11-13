@@ -40,11 +40,11 @@ jobs:
           name: production-files
           path: ./build
 
-     - name: Run ESLint
+      - name: Run ESLint
         run: yarn run lint . --ext .js,.jsx,.ts,.tsx
 
-     - name: Run prettier
-       run: yarn run prettier --write "./src/**/*.{md,css,json}"
+      - name: Run prettier
+        run: yarn run prettier --write "./src/**/*.{md,css,json}"
 
   deploy:
     name: Deploy
