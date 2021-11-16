@@ -40,6 +40,9 @@ jobs:
           name: production-files
           path: ./build
 
+      - name: Run ESLint
+        run: yarn run lint 
+
   deploy:
     name: Deploy
     needs: build
