@@ -31,6 +31,9 @@ jobs:
           REACT_APP_KINDLY_URL: ${{ secrets.REACT_APP_KINDLY_URL }}
           REACT_APP_PUBLIC_URL: ${{ secrets.REACT_APP_PUBLIC_URL }}
 
+      - name: Run ESLint
+        run: yarn run lint 
+
       - name: Run tests
         run: yarn run test
 
@@ -39,9 +42,6 @@ jobs:
         with:
           name: production-files
           path: ./build
-
-      - name: Run ESLint
-        run: yarn run lint 
 
   deploy:
     name: Deploy
