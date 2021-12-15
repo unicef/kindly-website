@@ -3,10 +3,6 @@ import {Switch, Route} from "react-router-dom";
 import Main from "./Main";
 import Form from "./Form";
 import Contribute from "./Contribute";
-import ReactGA from "react-ga4";
-
-ReactGA.initialize("G-S6WPR7VPDE");
-ReactGA.send("pageview");
 
 const App = () => {
   return (
