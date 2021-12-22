@@ -680,6 +680,64 @@ function Main() {
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
+
+            <Accordion className="pb-3 pt-4">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>
+                  What resources are available for me to learn more about cyberbullying
+                  and its prevention?
+                </Accordion.Header>
+                <Accordion.Body>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.unicef.org/end-violence/how-to-stop-cyberbullying"
+                        target="blank"
+                        rel="noreferrer"
+                      >
+                        “Cyberbullying: What is it and how to stop it”
+                      </a>
+                      by UNICEF
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://www.end-violence.org/knowledge"
+                        target="blank"
+                        rel="noreferrer"
+                      >
+                        Knowledge Platform
+                      </a>
+                      by The Global Partnership and Fund to End Violence Against Children
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://unesdoc.unesco.org/ark:/48223/pf0000379486"
+                        target="blank"
+                        rel="noreferrer"
+                      >
+                        Fact Sheet on Cyberbullying
+                      </a>
+                      by UNESCO
+                    </li>
+
+                    <li>
+                      If you are worried about your safety or something that has happened
+                      to you online, urgently speak to an adult you trust. Or visit{" "}
+                      <a
+                        href="https://www.childhelplineinternational.org/child-helplines/child-helpline-network/"
+                        target="blank"
+                        rel="noreferrer"
+                      >
+                        Child Helpline International
+                      </a>
+                      to find help in your country.
+                    </li>
+                  </ul>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </div>
         </div>
       </div>
