@@ -26,3 +26,5 @@ jobs:
       - name: Update counter
         env:
           COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
+        run: |
+          echo $COUNTER
