@@ -1,0 +1,29 @@
+name: Contribution Counter
+
+on: workflow_dispatch
+
+jobs:
+  count_contributions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout unicef/kindly repo into modeling/dataset file
+        uses: actions/checkout@v2
+          with:
+            repository: unicef/kindly
+            ref: combine-training-dataset
+            path: ./modeling/dataset
+      - id: get_file_contents
+        name: Get file contents
+        run: |
+          content=`cat ./modeling/dataset/training_data.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=fileContents::$content"
+      - name: Count number of objects in training_data file
+        run: |
+          echo "{{fromJson(steps.get_file_contents.outputs.fileContents).length}}"
+      - name: Update counter on website
