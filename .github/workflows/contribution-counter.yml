@@ -14,6 +14,7 @@ jobs:
           ref: combine-training-dataset
 
       - name: Count number of objects in training_data file
+        id: object_count
         run: |
           cd modeling/dataset
           NUMBER=$( jq '. | length' training_data.json )
@@ -21,3 +22,7 @@ jobs:
 
       - name: Checkout current repo
         uses: actions/checkout@v2
+
+      - name: Update counter
+        env:
+          COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
