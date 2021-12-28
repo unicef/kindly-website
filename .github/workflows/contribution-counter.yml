@@ -27,4 +27,5 @@ jobs:
         env:
           COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
         run: |
+          pwd
           echo $COUNTER
