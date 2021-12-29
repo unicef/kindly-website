@@ -7,6 +7,7 @@ import IconArrowDownBlue from "./img/icon-arrow-down-blue.svg";
 import IconArrowLeftLightblue from "./img/icon-arrow-left-lightblue.svg";
 import sendFinalMsg from "./img/send-final-message.svg";
 import goodInteraction from "./img/good-interaction.svg";
+import ContributionCounter from "./components/ContributionCounter";
 
 function Contribute() {
   return (
@@ -34,7 +35,8 @@ function Contribute() {
               cyberbullying or toxic intent. This will help improve Kindly&apos;s
               understanding.
             </p>
-            <div className="mt-5" style={{fontSize: "0.95em"}}>
+            <ContributionCounter />
+            <div className="mt-4" style={{fontSize: "0.95em"}}>
               <p>
                 Thank you for helping us build and improve the machine learning model that
                 will power Kindly.
@@ -70,12 +72,6 @@ function Contribute() {
           </div>
           <div className="col-lg-5">
             <KindlyForm contribute={true} />
-            <div>
-              <div>
-                <h3>How many contributions:</h3>
-                <p></p>
-              </div>
-            </div>
           </div>
         </div>
         <footer className="cover-footer mt-5 mx-auto text-center pb-4">

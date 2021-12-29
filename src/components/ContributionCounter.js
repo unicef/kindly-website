@@ -1,12 +1,13 @@
-const ContributionsCounter = () => {
+const ContributionCounter = () => {
   const COUNTER = 0;
 
   return (
     <div>
-      <h3>How many contributions: {COUNTER} </h3>
-      <p></p>
+      <p>
+        <b>{COUNTER} contributions have been collected so far.</b>
+      </p>
     </div>
   );
 };
 
-export default ContributionsCounter;
+export default ContributionCounter;
