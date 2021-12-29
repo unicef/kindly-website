@@ -27,4 +27,4 @@ jobs:
           COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
         run: |
           cd src/components
-          sed -i 's/COUNTER\=.*/COUNTER="${COUNTER}"/' CountributionCounter.js
+          sed -i 's/COUNTER\=.*/COUNTER="${COUNTER}"/' ContributionCounter.js
