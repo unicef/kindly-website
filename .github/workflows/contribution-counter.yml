@@ -10,8 +10,7 @@ jobs:
       - name: Checkout unicef/kindly repo into modeling/dataset file
         uses: actions/checkout@v2
         with:
-          repository: sabinevidal/kindly
-          ref: combine-training-dataset
+          repository: unicef/kindly
 
       - name: Count number of objects in training_data file
         id: object_count
@@ -27,5 +26,5 @@ jobs:
         env:
           COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
         run: |
-          pwd
-          echo $COUNTER
+          cd src/components
+          sed -i 's/COUNTER\=.*/COUNTER="${COUNTER}"/' CountributionCounter.js

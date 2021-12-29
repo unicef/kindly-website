@@ -8,9 +8,6 @@ import IconArrowLeftLightblue from "./img/icon-arrow-left-lightblue.svg";
 import sendFinalMsg from "./img/send-final-message.svg";
 import goodInteraction from "./img/good-interaction.svg";
 
-// eslint-disable-next-line no-undef
-const contributionsCounter = COUNTER;
-
 function Contribute() {
   return (
     <main>
@@ -75,7 +72,7 @@ function Contribute() {
             <KindlyForm contribute={true} />
             <div>
               <div>
-                <h3>How many contributions: {contributionsCounter} </h3>
+                <h3>How many contributions:</h3>
                 <p></p>
               </div>
             </div>
