@@ -42,6 +42,16 @@ function Footer() {
                 Contact
               </a>
             </div>
+            <div className="row mb-3">
+              <a
+                href="/privacyterms"
+                className="text-decoration-none text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Privacy and Terms of Use
+              </a>
+            </div>
           </div>
         </div>
       </div>
