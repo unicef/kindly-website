@@ -1,6 +1,9 @@
 name: Contribution Counter
 
-on: push
+on:
+  schedule:
+    # Runs once a day at 00:15 UTC
+    # - cron: '15 0 * * *'
 
 jobs:
   count_contributions:
@@ -28,3 +31,15 @@ jobs:
         run: |
           cd src/components
           sed -i 's/COUNTER\=.*/COUNTER="${COUNTER}"/' ContributionCounter.js
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+
+      - name: 'Commit updated counter'
+        run: |
+          git config --global user.name 'sabinevidal'
+          git config --global user.email 'sabinevidal@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Updated counter - ${{ steps.date.outputs.today }}"
+          git push
