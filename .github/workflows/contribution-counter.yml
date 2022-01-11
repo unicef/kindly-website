@@ -32,14 +32,10 @@ jobs:
           cd src/components
           sed -i "s/COUNTER\=.*/COUNTER=${COUNTER}/" ContributionCounter.js
 
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
-
       - name: 'Commit updated counter'
         run: |
           git config --global user.name 'sabinevidal'
           git config --global user.email 'sabinevidal@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/unicef/kindly-website
-          git commit -am "Updated counter - ${{ steps.date.outputs.today }}"
+          git commit -am "Updated counter - ${{ steps.object_count.outputs.phraseNumber }}"
           git push
