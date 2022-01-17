@@ -1,0 +1,41 @@
+name: Contribution Counter
+
+on:
+  schedule:
+    # Runs once a day at 00:15 UTC
+    - cron: '15 0 * * *'
+
+jobs:
+  count_contributions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout unicef/kindly repo into modeling/dataset file
+        uses: actions/checkout@v2
+        with:
+          repository: unicef/kindly
+
+      - name: Count number of objects in training_data file
+        id: object_count
+        run: |
+          cd modeling/dataset
+          NUMBER=$( jq '. | length' training_data.json )
+          echo "::set-output name=phraseNumber::$NUMBER"
+
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+
+      - name: Update counter
+        env:
+          COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
+        run: |
+          cd src/components
+          sed -i "s/COUNTER \= .*/COUNTER = ${COUNTER}/" ContributionCounter.js
+
+      - name: 'Commit updated counter'
+        run: |
+          git config --global user.name 'sabinevidal'
+          git config --global user.email 'sabinevidal@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/unicef/kindly-website
+          git commit -am "Updated counter - ${{ steps.object_count.outputs.phraseNumber }}"
+          git push
