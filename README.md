@@ -18,7 +18,7 @@ Summary of main files:
 - [src/App.css](src/App.css) provides the CSS for the application, customizing the Bootstrap default theme.
 - [src/img](src/img) folder contains all the illustrations for the website in SVG format.
 
-## SetUp For New Contributors
+## Setup For New Contributors
 
 The Kindly public website uses the `yarn` package manager in place of the default `npm`. Visit [yarnpkg/getting-started](https://yarnpkg.com/getting-started) to learn more about yarn package manager.
 
