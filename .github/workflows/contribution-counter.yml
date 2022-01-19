@@ -34,8 +34,8 @@ jobs:
 
       - name: 'Commit updated counter'
         run: |
-          git config --global user.name 'sabinevidal'
-          git config --global user.email 'sabinevidal@users.noreply.github.com'
+          git config --global user.name 'nathanfletcher'
+          git config --global user.email 'nathanfletcher@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/unicef/kindly-website
           git commit -am "Updated counter - ${{ steps.object_count.outputs.phraseNumber }}"
           git push
