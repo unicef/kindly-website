@@ -1,9 +1,9 @@
 name: Contribution Counter
 
 on:
-  schedule:
+  push:
     # Runs once a day at 00:15 UTC
-    - cron: '15 0 * * *'
+    # - cron: '15 0 * * *'
 
 jobs:
   count_contributions:
