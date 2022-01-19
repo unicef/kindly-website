@@ -30,7 +30,7 @@ jobs:
           COUNTER: ${{ steps.object_count.outputs.phraseNumber }}
         run: |
           cd src/components
-          sed -i "s/COUNTER \= .*/COUNTER = ${COUNTER}/" ContributionCounter.js
+          sed -i "s/COUNTER \= .*/COUNTER = ${COUNTER};/" ContributionCounter.js
 
       - name: 'Commit updated counter'
         run: |
