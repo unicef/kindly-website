@@ -1,0 +1,42 @@
+name: Push Downstream
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  push_downstream:
+    runs-on: ubuntu-latest
+    # Only to be run on commits to main branch AND when in the upstream repository
+    if: github.ref == 'refs/heads/main' && github.repository == 'unicef/kindly-website'
+
+    steps:
+      # Checkout downstream repo at lacabra/kindly-website
+      - uses: actions/checkout@v2
+        with: 
+          repository: lacabra/kindly-website
+          token: ${{ secrets.LACABRA_TOKEN }}  # Personal Access Token with workflow scope
+
+      - name: fetch and push
+        run: |
+          # Set upstream to this repository
+          git remote add upstream https://github.com/${GITHUB_REPOSITORY}
+
+          # Verify upstream is correct, you should see the URL for the upstream fetch and push 
+          git remote -v
+
+          # Get all recent branches and commits from the upstream
+          git fetch upstream
+
+          # Make sure we are on the main branch
+          git checkout main
+
+          # Merge the branches and commits from the upstream
+          git merge upstream/main
+                        
+          # helpful for debugging
+          git show-ref
+        
+          # Push changes to main branch of downstream repo. This works because we have 
+          # checked out the repo with actions/checkout@v2 and the right Personal Access Token
+          git push origin main
