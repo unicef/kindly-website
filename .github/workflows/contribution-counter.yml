@@ -35,10 +35,10 @@ jobs:
 
       - name: 'Commit updated counter'
         run: |
-          if git diff --exit-code; then
+          if ! git diff --exit-code; then
             git config --global user.name 'nathanfletcher'
             git config --global user.email 'nathanfletcher@users.noreply.github.com'
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/unicef/kindly-website
+            git remote set-url origin https://x-access-token:${{ secrets.GH_ACTION_PAT }}@github.com/unicef/kindly-website
             git commit -am "Updated counter - ${{ steps.object_count.outputs.phraseNumber }}"
             git push
           fi
