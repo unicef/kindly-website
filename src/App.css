@@ -255,9 +255,13 @@ p {
 }
 
 .nav-link-kindly {
-  color: #00AEEF;
+  color: #00aeef;
   text-decoration: none;
   font-weight: 600;
+}
+
+#privacy_terms h3 {
+  font-size: 1.5em;
 }
 
 @keyframes App-logo-spin {
