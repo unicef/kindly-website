@@ -14,8 +14,8 @@ jobs:
       # Checkout downstream repo at lacabra/kindly-website
       - uses: actions/checkout@v2
         with: 
-          repository: lacabra/kindly-website
-          token: ${{ secrets.LACABRA_TOKEN }}  # Personal Access Token with workflow scope
+          repository: dpgabot/kindly-website
+          token: ${{ secrets.DPGABOT_TOKEN }}  # Personal Access Token with workflow scope
 
       - name: fetch and push
         run: |
