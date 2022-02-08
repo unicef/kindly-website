@@ -25,6 +25,8 @@ jobs:
 
       - name: Checkout current repo
         uses: actions/checkout@v2
+        with:
+          token: ${{secrets.GH_ACTION_PAT}}
 
       - name: Update counter
         env:
