@@ -14,12 +14,12 @@ function Footer() {
           </div>
           <div className="col-3 mx-auto text-white">
             <div className="row mb-3">
-              <HashLink to="#test-kindly" className="text-decoration-none text-white ">
+              <HashLink to="#test-kindly" className="text-decoration-none text-white">
                 Learn
               </HashLink>
             </div>
             <div className="row mb-3">
-              <HashLink to="/contribute" className="text-decoration-none text-white ">
+              <HashLink to="/contribute" className="text-decoration-none text-white">
                 Contribute data
               </HashLink>
             </div>
@@ -41,6 +41,11 @@ function Footer() {
               >
                 Contact
               </a>
+            </div>
+            <div className="row mb-3">
+              <HashLink to="/legal" className="text-decoration-none text-white">
+                Privacy and Terms of Use
+              </HashLink>
             </div>
           </div>
         </div>

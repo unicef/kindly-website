@@ -3,6 +3,7 @@ import {Switch, Route} from "react-router-dom";
 import Main from "./Main";
 import Form from "./Form";
 import Contribute from "./Contribute";
+import PrivacyTerms from "./PrivacyTerms";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route exact path="/" component={Main}></Route>
       <Route exact path="/form" component={Form}></Route>
       <Route exact path="/contribute" component={Contribute}></Route>
+      <Route exact path="/legal" component={PrivacyTerms}></Route>
     </Switch>
   );
 };
