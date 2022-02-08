@@ -21,8 +21,8 @@ function PrivacyTerms() {
                 &nbsp;&nbsp;Learn about Kindly
               </a>
             </div>
-            <h1 className="my-5">Privacy Policy and Terms of Use for Kindly</h1>
-            <div className="mt-5" id="privacy_policy" style={{fontSize: "0.95em"}}>
+            <h1 className="my-3">Privacy Policy and Terms of Use for Kindly</h1>
+            <div className="mt-4" id="privacy_policy">
               <h2>Privacy Policy</h2>
               <h3>What does this Privacy Policy cover?</h3>
               <p>
@@ -41,27 +41,26 @@ function PrivacyTerms() {
                 identification number, location data, or online identifier - or one or
                 more other factors specific to you as an individual that would allow us to
                 identify you. In brief: How do we protect your Personal Information?
-                <ul>
-                  <li>
-                    We will not use your Personal Information other than for the purposes
-                    described in this Policy.
-                  </li>
-                  <li>We will not sell your Personal Information.</li>
-                  <li>
-                    We will not keep your Personal Information for longer than is
-                    necessary for the stated purposes, except to the extent legally
-                    required.
-                  </li>
-                  <li>
-                    We will take all reasonable and necessary technical and organizational
-                    measures to protect your Personal Information. For example, we use
-                    outside service providers to host our website and provide other
-                    services to us. We have implemented the necessary contractual
-                    arrangements with the aim of ensuring the confidentiality and security
-                    of your Personal Information that we share with them.
-                  </li>
-                </ul>
               </p>
+              <ul>
+                <li>
+                  We will not use your Personal Information other than for the purposes
+                  described in this Policy.
+                </li>
+                <li>We will not sell your Personal Information.</li>
+                <li>
+                  We will not keep your Personal Information for longer than is necessary
+                  for the stated purposes, except to the extent legally required.
+                </li>
+                <li>
+                  We will take all reasonable and necessary technical and organizational
+                  measures to protect your Personal Information. For example, we use
+                  outside service providers to host our website and provide other services
+                  to us. We have implemented the necessary contractual arrangements with
+                  the aim of ensuring the confidentiality and security of your Personal
+                  Information that we share with them.
+                </li>
+              </ul>
               <ol>
                 <h3>
                   <li>What personal information do we collect from you?</li>
@@ -90,14 +89,14 @@ function PrivacyTerms() {
                 <p>
                   We collect and will use your Personal Information only for the purposes
                   indicated below and only when it is necessary to:
-                  <ul>
-                    <li>Contact you in response to a query or suggestion</li>
-                    <li>
-                      Enforce our Terms of Use, defend our legal rights, and comply with
-                      our legal obligations and policies
-                    </li>
-                  </ul>
                 </p>
+                <ul>
+                  <li>Contact you in response to a query or suggestion</li>
+                  <li>
+                    Enforce our Terms of Use, defend our legal rights, and comply with our
+                    legal obligations and policies
+                  </li>
+                </ul>
                 <h3>
                   <li>How do we share your personal information?</li>
                 </h3>
@@ -105,23 +104,21 @@ function PrivacyTerms() {
                   We generally do not share your Personal Information. We may share it
                   only for the purposes indicated below and only when it is necessary.
                 </p>
-                <p>
-                  Why and how do we share your Personal Information?
-                  <ul>
-                    <li>
-                      If you have expressed interest in a Kindly partnership or
-                      collaboration, we may share some of your Personal Information with
-                      our partners so that they may contact you further.
-                    </li>
-                    <li>
-                      We may disclose your Personal Information with your permission. For
-                      example, another UNICEF personnel may be better equipped to respond
-                      to a query. In that case, we may share some of your Personal
-                      Information with that UNICEF personnel so that they may contact you
-                      with an appropriate response.
-                    </li>
-                  </ul>
-                </p>
+                <p>Why and how do we share your Personal Information? </p>
+                <ul>
+                  <li>
+                    If you have expressed interest in a Kindly partnership or
+                    collaboration, we may share some of your Personal Information with our
+                    partners so that they may contact you further.
+                  </li>
+                  <li>
+                    We may disclose your Personal Information with your permission. For
+                    example, another UNICEF personnel may be better equipped to respond to
+                    a query. In that case, we may share some of your Personal Information
+                    with that UNICEF personnel so that they may contact you with an
+                    appropriate response.
+                  </li>
+                </ul>
                 <p>
                   We will only transfer your Personal Information to trusted third parties
                   who provide sufficient guarantees that your Personal Information will be
@@ -260,7 +257,7 @@ function PrivacyTerms() {
                 </p>
               </ol>
             </div>
-            <div className="mt-5" id="terms_use" style={{fontSize: "0.95em"}}>
+            <div className="mt-5" id="terms_use">
               <h2>Terms of Use</h2>
               <p>Welcome to the Kindly website!</p>
               <p>
@@ -402,33 +399,31 @@ function PrivacyTerms() {
                     Creative Commons Attribution-ShareAlike 4.0
                   </a>{" "}
                   which means that you are free to:
-                  <ul>
-                    <li>
-                      <b>Share</b> — copy and redistribute the material in any medium or
-                      format
-                    </li>
-                    <li>
-                      <b>Adapt</b> — remix, transform, and build upon the material for any
-                      purpose, even commercially.
-                    </li>
-                  </ul>
                 </p>
-                <p>
-                  Under the following terms:
-                  <ul>
-                    <li>
-                      <b>Attribution</b> — You must give appropriate credit, provide a
-                      link to the license, and indicate if changes were made. You may do
-                      so in any reasonable manner, but not in any way that suggests the
-                      licensor endorses you or your use
-                    </li>
-                    <li>
-                      <b>ShareAlike</b> — If you remix, transform, or build upon the
-                      material, you must distribute your contributions under the same
-                      license as the original.
-                    </li>
-                  </ul>
-                </p>
+                <ul>
+                  <li>
+                    <b>Share</b> — copy and redistribute the material in any medium or
+                    format
+                  </li>
+                  <li>
+                    <b>Adapt</b> — remix, transform, and build upon the material for any
+                    purpose, even commercially.
+                  </li>
+                </ul>
+                <p>Under the following terms:</p>
+                <ul>
+                  <li>
+                    <b>Attribution</b> — You must give appropriate credit, provide a link
+                    to the license, and indicate if changes were made. You may do so in
+                    any reasonable manner, but not in any way that suggests the licensor
+                    endorses you or your use
+                  </li>
+                  <li>
+                    <b>ShareAlike</b> — If you remix, transform, or build upon the
+                    material, you must distribute your contributions under the same
+                    license as the original.
+                  </li>
+                </ul>
                 <p>
                   The content, resources, and all other parts of this site are the
                   property of UNICEF and/or licensors and are protected by copyright,

@@ -260,8 +260,30 @@ p {
   font-weight: 600;
 }
 
+#privacy_terms p {
+  font-size: 1em;
+}
+
+#privacy_terms h2 {
+  margin-bottom: 1.2rem;
+}
 #privacy_terms h3 {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-family: Jost;
+}
+
+#privacy_terms ul {
+  font-size: 1em;
+  font-family: Jost;
+  margin-bottom: 1em;
+}
+
+#privacy_terms aside li {
+  text-align: right;
+  list-style: none;
+}
+#privacy_terms aside li a {
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
