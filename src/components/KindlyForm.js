@@ -227,26 +227,6 @@ function KindlyForm(props) {
     kindlyStatus.style.backgroundColor = "#000";
     kindlyStatus.style.visibility = "visible";
 
-    if (props.contribute) {
-      let formData = new FormData();
-      formData.append("text", inputText);
-
-      fetch(SCRIPT_URL, {method: "POST", body: formData})
-        .then(async (response) => {
-          const r = await response.json();
-          const updatedRow = parseInt(r.row);
-          setRowNumber(updatedRow);
-          if (r["result"] === "error") {
-            console.log("Something went wrong");
-            console.log(r["error"]);
-          }
-        })
-        .catch(async (error) => {
-          console.log("Something went wrong");
-          console.log(error);
-        });
-    }
-
     fetch(KINDLY_URL, {
       method: "POST",
       mode: "cors",
