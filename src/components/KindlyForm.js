@@ -133,7 +133,7 @@ function KindlyForm(props) {
                 variant="outline-light"
                 className="btn-small ml-3"
                 style={{boxShadow: "none", float: "right"}}
-                onClick={(e) => handleFeedback(e, "yes")}
+                onClick={(e) => handleFeedback(e, "no")}
               >
                 NO
               </Button>
@@ -141,7 +141,7 @@ function KindlyForm(props) {
                 variant="outline-light"
                 className="btn-small mx-3"
                 style={{boxShadow: "none", float: "right"}}
-                onClick={(e) => handleFeedback(e, "no")}
+                onClick={(e) => handleFeedback(e, "yes")}
               >
                 YES
               </Button>
