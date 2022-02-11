@@ -77,6 +77,7 @@ function KindlyForm(props) {
     formData.append("text", inputText);
     formData.append("intent", value);
     formData.append("row", refRow.current);
+    formData.append("prompt", prompts);
 
     fetch(SCRIPT_URL, {method: "POST", body: formData})
       .then(async (response) => {
