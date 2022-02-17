@@ -26,24 +26,12 @@ const PROMPTS = [
     "that weirdo from the party last week is here. They're so stupid.",
     "I mean, who even likes them?",
   ],
-  [
-    "What did you think about the new movie that came out?",
-    "How was the actor?"
-  ],
-  [
-    "Omg, did you hear?",
-    "He fell down the stairs at school! People were laughing LOL"
-  ],
+  ["What did you think about the new movie that came out?","How was the actor?"],
+  ["Omg, did you hear?", "They fell down the stairs at school! People were laughing LOL"],
   ["Dudeee, do you think I’m stupid?"],
-  [
-    "Yo, I found that class was sooooo boring.",
-    "What about you?"
-  ],
+  ["Yo, I found that class was sooooo boring.", "What about you?"],
   ["Why were you spreading rumors about me at school?"],
-  [
-    "Why don’t I get picked for sport teams?",
-    "What am I doing wrong?"
-  ],
+  ["Why don’t I get picked for sport teams?", "What am I doing wrong?"],
 ];
 
 const randomizePrompt = () => {
