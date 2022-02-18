@@ -1,5 +1,5 @@
 const ContributionCounter = () => {
-  const COUNTER = 271;
+  const COUNTER = 461;
 
   return (
     <div>
