@@ -18,14 +18,20 @@ const PROMPTS = [
     "I thought the movie was great. I liked it, but not the scary parts. Those freaked me out.",
     "What did you think?",
   ],
-  ["Should we meet at the library?", " Does that sound okay?"],
+  ["Should we meet at the library to work on our homework?"],
   ["Was the presentation okay?", "I couldn't tell..."],
   ["I don't really have friends yet and I don't know why."],
-  ["omg did you see what he was wearing today?", "wasn't it ugly?!"],
+  ["omg did you see what they were wearing today?", "wasn't it ugly?!"],
   [
-    "that weirdo from the party last week is here. she's so stupid.",
-    "I mean, who even likes her?",
+    "that weirdo from the party last week is here. They're so stupid.",
+    "I mean, who even likes them?",
   ],
+  ["What did you think about the new movie that came out?", "How was the actor?"],
+  ["Omg, did you hear?", "They fell down the stairs at school! People were laughing LOL"],
+  ["Dudeee, do you think I’m stupid?"],
+  ["Yo, I found that class was sooooo boring.", "What about you?"],
+  ["Why were you spreading rumors about me at school?"],
+  ["Why don’t I get picked for sport teams?", "What am I doing wrong?"],
 ];
 
 const randomizePrompt = () => {
