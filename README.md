@@ -44,7 +44,7 @@ Install dependencies
 ```bash
 yarn
 ```
-or
+Or
 ```bash
 yarn install
 ```
