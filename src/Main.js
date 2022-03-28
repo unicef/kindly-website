@@ -681,7 +681,7 @@ function Main() {
               </Accordion.Item>
             </Accordion>
 
-            <Accordion className="pb-3 pt-4">
+            <Accordion className="pb-3">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
                   What resources are available for me to learn more about cyberbullying
