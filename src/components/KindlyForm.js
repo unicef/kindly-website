@@ -85,7 +85,12 @@ function KindlyForm(props) {
     formData.append("row", refRow.current);
     formData.append("prompt", prompts);
 
-    fetch(SCRIPT_URL, {method: "POST", body: formData, mode: "cors"})
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: formData,
+      mode: "cors",
+      headers: {"Access-Control-Allow-Origin": "*"},
+    })
       .then(async (response) => {
         const r = await response.json();
         if (r["result"] === "error") {
