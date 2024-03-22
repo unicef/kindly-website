@@ -25,26 +25,32 @@ The Kindly public website uses the `yarn` package manager in place of the defaul
 Please note that the default operating system for [kindly](https://github.com/unicef/kindly) and [kindly-website](https://github.com/unicef/kindly-website) is Linux but if you are using Windows, you can use the wsl([windows subsystem for linux](https://docs.microsoft.com/en-us/windows/wsl/#:~:text=The%20Windows%20Subsystem%20for%20Linux,machine%20or%20dual%2Dboot%20setup.)) and any distro you are comfortable with.
 
 Update the Linux packages
+
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
 Install yarn package manager. Skip this step if yarn is already installed.
+
 ```bash
 npm install -g yarn
 ```
 
 Clone and access the repository
+
 ```bash
 git clone https://github.com/unicef/kindly-website.git
 cd kindly-website
 ```
 
 Install dependencies
+
 ```bash
 yarn
 ```
+
 Or
+
 ```bash
 yarn install
 ```
@@ -55,7 +61,7 @@ Configure an environment variable `REACT_APP_SCRIPT_URL` as per the instructions
 
 ## Hosting
 
-The website is hosted using [GitHub Pages](https://pages.github.com/) using the `gh-pages` branch. The process of updating the website is automated through [GitHub Actions](https://docs.github.com/en/actions) through [.github/workflows/build-deploy.yml](.github/workflows/build-deploy.yml) following the documentation provided in the following article: [Deploying a React App Using GitHub Pages and GitHub Actions](https://codeburst.io/deploying-a-react-app-using-github-pages-and-github-actions-7fc14d380796)
+The website is hosted using [Cloudflare Pages](https://pages.cloudflare.com/) using the `main` branch. The process of updating the website is automated through [GitHub Actions](https://docs.github.com/en/actions) through [.github/workflows/build-deploy.yml](.github/workflows/build-deploy.yml). After the GitHub Action builds the page, Cloudflare Pages takes over to deploy the `main` branch.
 
 ## Embed Form
 
@@ -63,7 +69,9 @@ The Kindly Form is embeddable for demo purposes into other websites, such as uni
 
 ```html
 <script src="https://kindly.unicef.io/postresizemessage.js" />
-<iframe src="https://kindly.unicef.io/form" style="border: none;" title="Kindly Form">You must have a browser that supports iFrames</iframe>
+<iframe src="https://kindly.unicef.io/form" style="border: none;" title="Kindly Form"
+  >You must have a browser that supports iFrames</iframe
+>
 ```
 
 The code above implements [Window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) to safely enable cross-origin communication between Window objects, that is the iframe content and the host page, and resize the iframe to make it responsive within the page where it is embeded.
