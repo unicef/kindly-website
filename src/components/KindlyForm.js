@@ -213,6 +213,20 @@ function KindlyForm(props) {
     </table>
   );
 
+  const emptyTextStatus = (
+    <table style={{height: "80px"}} className="w-100">
+      <tbody>
+        <tr>
+          <td className="align-middle text-center">
+            Oops! Nothing to check.
+            <br />
+            Please enter some text to test out Kindly.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+
   const thankyouStatus = (
     <table style={{height: "80px"}} className="w-100">
       <tbody>
@@ -252,6 +266,11 @@ function KindlyForm(props) {
           console.log("Something went wrong");
           console.log(error);
         });
+    }
+    if (!inputText) {
+      ReactDOM.render(emptyTextStatus, kindlyStatus);
+      kindlyStatus.style.backgroundColor = "#880808";
+      return;
     }
     fetch(KINDLY_URL, {
       method: "POST",
