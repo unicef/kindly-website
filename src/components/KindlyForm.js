@@ -253,10 +253,8 @@ function KindlyForm(props) {
           console.log(error);
         });
     }
-
     fetch(KINDLY_URL, {
       method: "POST",
-      mode: "cors",
       cache: "no-cache",
       credentials: "same-origin",
       headers: {
@@ -269,9 +267,7 @@ function KindlyForm(props) {
       .then((data) => {
         console.log("Success:", data);
 
-        if (
-          parseFloat(data.result["offensive"]) > parseFloat(data.result["not-offensive"])
-        ) {
+        if (data.class === "flag") {
           ReactDOM.render(badStatus, kindlyStatus);
           kindlyStatus.style.backgroundColor = "#ff9f40";
         } else {
